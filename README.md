@@ -16,7 +16,7 @@ Static site for Perto: front page, privacy policy and the churches page, in pt-B
 
 1. Remove the yellow draft bar from each page (`<div class="draft">…</div>` and the comment above it).
 2. Fill the `to confirm` items on both privacy pages: effective date, the controller's postal address.
-3. Create (or forward) the two mailboxes: `privacidade@perto.life` (privacy officer / DPO) and `igrejas@perto.life` (church interest). Or change the addresses.
+3. Create (or forward) the two mailboxes: `privacidade@bridgeintelligence.ca` (privacy officer / DPO) and `igrejas@bridgeintelligence.ca` (church interest). Or change the addresses.
 4. Optional: paste a form embed (Tally works on a static site) into the `form-box` on both churches pages, replacing the mailto fallback.
 
 ## Publishing on GitHub Pages
