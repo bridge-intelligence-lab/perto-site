@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A week with Perto at Grace Community</title>
+<meta name="description" content="Demo conversations between Perto and fictional members of Grace Community Church, Toronto.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&display=swap">
+<style>
+:root{--bg:#f7f5f0;--panel:#fff;--ink:#1f2a24;--muted:#5d6b63;--line:#e2ded5;--accent:#1f5e46;--accent-ink:#fff;--accent-soft:#e4efe8;--warn-bg:#fff4cf;--warn-ink:#5a4300;--chat:#ece7dc;--out:#d9f5c9;--in:#fff;--serif:"Lora",Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11161a;--panel:#181f24;--ink:#e8ebe9;--muted:#a3ada7;--line:#2a333a;--accent:#6fbf95;--accent-ink:#0c1a13;--accent-soft:#1b2b24;--warn-bg:#3a2f08;--warn-ink:#ffe08a;--chat:#0e1317;--out:#1f3b22;--in:#222b31}}
+:root[data-theme="dark"]{--bg:#11161a;--panel:#181f24;--ink:#e8ebe9;--muted:#a3ada7;--line:#2a333a;--accent:#6fbf95;--accent-ink:#0c1a13;--accent-soft:#1b2b24;--warn-bg:#3a2f08;--warn-ink:#ffe08a;--chat:#0e1317;--out:#1f3b22;--in:#222b31}
+*{box-sizing:border-box}html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans);padding-inline:16px}
+a{color:var(--accent);text-underline-offset:3px}
+.wrap{max-width:68ch;margin:0 auto;padding-block:24px 64px}
+header.site{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:8px 28px}
+.brand{font:600 22px/1 var(--serif);color:var(--ink);text-decoration:none}.brand small{font:400 13px/1 var(--sans);color:var(--muted);margin-left:8px}
+nav.site{display:flex;gap:16px;font-size:15px}nav.site a{color:var(--muted);text-decoration:none}
+h1{font:600 clamp(28px,6vw,40px)/1.15 var(--serif);margin:0 0 12px;text-wrap:balance}
+h2{font:600 24px/1.25 var(--serif);margin:40px 0 10px;text-wrap:balance}
+p,li{max-width:68ch}.lead{font-size:19px;color:var(--muted);margin-top:0}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+.warn{background:var(--warn-bg);color:var(--warn-ink);padding:12px 16px;border-radius:10px;font-size:15px;margin:16px 0 28px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:28px 0}
+.card-head{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:18px;align-items:center}
+.avatar{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;font:600 34px/1 var(--serif);color:#fff;letter-spacing:.02em}
+.card-head img{width:88px;height:88px;border-radius:50%;object-fit:cover;display:block}
+.who{display:grid;gap:4px;min-width:0}.who .name{font:600 26px/1.1 var(--serif)}.who .role{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.chip{font-size:13px;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;padding:0 18px 16px}
+.fact b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.fact span{font-size:16px}
+@media (max-width:480px){.facts{grid-template-columns:1fr}}
+.story{padding:0 18px 16px;font-size:16px;margin:0}
+.status{margin:0 18px 16px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);font-size:15px}
+.chat{background:var(--chat);padding:14px 12px;display:grid;gap:8px}
+.day{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;text-align:center;margin:10px 0 4px}
+.msg{max-width:86%;padding:8px 12px;border-radius:12px;font-size:15.5px;line-height:1.45;box-shadow:0 1px 0 rgba(0,0,0,.06);white-space:pre-line;position:relative}
+.msg.out{background:var(--out);justify-self:end;border-bottom-right-radius:3px}
+.msg.in{background:var(--in);justify-self:start;border-bottom-left-radius:3px}
+.msg .t{display:block;font-size:11.5px;color:var(--muted);text-align:right;margin-top:3px}
+.msg .tag{display:inline-block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:4px}
+.msg .verse{font:italic 15.5px/1.45 var(--serif);color:var(--accent)}
+.steps{counter-reset:step;list-style:none;padding:0;margin:16px 0;display:grid;gap:12px}
+.steps li{counter-increment:step;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 56px;position:relative}
+.steps li::before{content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:600 15px/28px var(--sans);text-align:center}
+.try{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:16px}
+.try svg{width:150px;height:150px;background:#fff;border-radius:10px;padding:6px}
+@media (max-width:480px){.try{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.cta{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:12px 18px;border-radius:10px;margin-top:8px}
+.pilot{font-size:14px;color:var(--muted);margin-top:12px}
+footer.site{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 20px}
+footer.site a{color:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <a class="brand" href="/en/">Perto <small>perto.life</small></a>
+  <nav class="site"><a href="/en/">Home</a><a href="/en/churches.html">For churches</a><a href="/en/privacy.html">Privacy</a><a href="/">Português</a></nav>
+</header>
+<main>
+  <div class="eyebrow">Perto · a demo with fictional characters</div>
+  <h1>A week with Perto at Grace Community</h1>
+  <p class="lead">Perto is Grace Community Church's pastoral companion on WhatsApp. To show how it talks, we invented fictional members from around Toronto and let each of them write for a week. What Perto replied is here, unedited.</p>
+  <div class="warn">Nobody here is real. The three characters were invented by a computer program to test Perto. Perto's replies, though, are genuine: they are exactly what it would say to you.</div>
+  <section class="card" id="jun"><div class="card-head"><div class="avatar" style="background:#1f5e46" aria-hidden="true">J</div><div class="who"><div class="name">Jun</div><div class="role">71 · nurse</div><div class="chips"><span class="chip">Etobicoke</span><span class="chip">new to faith</span></div></div></div><div class="facts"><div class="fact"><b>At home</b><span>with his wife</span></div><div class="fact"><b>Morning word</b><span>asked for 6 am</span></div><div class="fact"><b>How he writes</b><span>measured, full sentences</span></div><div class="fact"><b>What weighs</b><span>shifts that keep changing; whether the job will last</span></div></div><p class="story">Jun is 71 and still nursing. The shifts keep changing and he is not sure the job will last. He had not told anyone at church how rough it had been, afraid they would think he was not trusting enough.</p><div class="status"><b>Where the conversation stands:</b> he decided to tell someone at Bible study that week, and did.</div><div class="chat"><div class="day">Tuesday, Oct 6</div><div class="msg in">It sounds like work has been genuinely hard lately, and even with that, you're holding onto trust that God has a plan — that takes real strength, not denial of how complicated things feel right now.
+
+Trusting God's plan doesn't mean the difficulty disappears or that you have to pretend work isn't weighing on you. It's okay to name both things at once: the hard days at work, and the trust underneath them.
+
+This makes me think of Proverbs 3:5-6: Trust in the LORD with all your heart, and don’t lean on your own understanding. In all your ways acknowledge him, and he will make your paths straight.
+
+You don't have to have it all figured out tonight — trusting him one day at a time is enough, even on the complicated days.
+
+Lord, thank you for Jun's trust even in the middle of a hard season at work. Give wisdom for each day, and peace that doesn't depend on things being easy. Amen.
+
+Is there someone in your small group or Bible study you could share what's going on at work with this week — not just the trust part, but the hard part too?<span class="t">09:22</span></div><div class="msg out">Thank you for that. You're right, it helps to say both things. I haven't talked to anyone at church about how rough it's been — maybe I should. I'm worried they'll think I'm not trusting enough, you know? But what you said makes sense. I'll think about it.<span class="t">09:24</span></div><div class="msg in">It means a lot that saying both things together helped — the struggle and the trust don't have to cancel each other out. And that fear you named, about church thinking you're "not trusting enough" if you're honest about how rough it's been — that's a real worry, not a small one.
+
+But faith was never meant to mean pretending you're fine. The people who walked closest with God in Scripture were often the most honest about their struggles — David, Elijah, even Paul. Naming the hard stuff out loud isn't a crack in your trust, it's part of carrying it well.
+
+This makes me think of 1 Peter 5:7: casting all your worries on him, because he cares for you.
+
+You don't need to have it all figured out before you reach out. Just being willing to say "this has been rough" is already a step most people are too afraid to take.
+
+God, give Jun courage to be honest with someone who loves him, and soften whatever fear tells him he'll be judged for it. Meet him in that conversation if he takes it.
+
+Maybe this week, pick just one person from your small group or Bible study — someone you already trust a little — and tell them the short version first. You don't have to carry the whole weight of that conversation alone either.<span class="t">09:24</span></div><div class="msg out">I think I will talk to someone. Maybe at Bible study this week. It helps to hear that being honest isn't the same as not trusting. I've been carrying this alone too long.<span class="t">09:26</span></div><div class="msg in">It sounds like something just shifted in you — deciding to talk to someone at Bible study this week, after carrying this alone for so long. That's not a small thing to say out loud.
+
+Being honest about what you're going through was never the opposite of trusting God — if anything, it's part of what trust looks like. Carrying it silently doesn't make you stronger, it just makes you more alone with it.
+
+This makes me think of Deuteronomy 31:6: Be strong and courageous. Don’t be afraid or scared of them, for the LORD your God himself is who goes with you. He will not fail you nor forsake you.”
+
+You don't have to have it all figured out before you reach out — just showing up and being honest is already the courageous part.
+
+Lord, thank you that you've been with Jun even in the carrying-it-alone seasons. Give him the courage to follow through this week, and give him people who listen well when he does. Amen.
+
+Since Bible study is already on your mind, maybe start there — you don't need to share everything at once, even one honest sentence to one person in that group is a real step.<span class="t">09:26</span></div></div></section><section class="card" id="kadeen"><div class="card-head"><div class="avatar" style="background:#8a3b1f" aria-hidden="true">K</div><div class="who"><div class="name">Kadeen</div><div class="role">51 · teacher</div><div class="chips"><span class="chip">London, Ontario</span><span class="chip">exploring faith</span></div></div></div><div class="facts"><div class="fact"><b>At home</b><span>with her children and grandkids</span></div><div class="fact"><b>Morning word</b><span>asked for 7 am</span></div><div class="fact"><b>How she writes</b><span>British turns of phrase, a 🙏 at the end</span></div><div class="fact"><b>What weighs</b><span>a body still recovering; the dark coming early</span></div></div><p class="story">Kadeen teaches primary school and has been worn down by an illness that would not quite leave. She wrote on a Sunday night, tired, and came back two days later with a win: a fractions lesson that landed, and a daughter relieved to see her on the mend.</p><div class="status"><b>Where the conversation stands:</b> she messaged her small group leader that week instead of waiting.</div><div class="chat"><div class="day">Sunday, Oct 4</div><div class="msg out">Been a long day tbh. Body's still not quite right from earlier in the week but managing. How's your Sunday evening going? 🙏<span class="t">21:16</span></div><div class="day">Monday, Oct 5</div><div class="msg in">Sounds like it's been a long day, and your body is still catching up from earlier in the week even as you're pushing through and managing. That "managing" can be its own kind of tired — the quiet, low-grade kind that doesn't always get noticed.
+
+It's good that you're paying attention to your body instead of just powering past it. Healing and recovery aren't always fast, and giving yourself grace while you're still not quite right is wisdom, not weakness.
+
+This makes me think of Mark 1:31: He came and took her by the hand and raised her up. The fever left her immediately, and she served them.
+
+Even in that story, the care came through someone else's presence, not just her own effort. You don't have to carry getting-well alone — being tended to is part of how healing works.
+
+Lord, thank you for being near on an ordinary, tired Sunday evening. Please restore Kadeen's body and give rest where it's needed, and remind them they're not carrying this alone.
+
+Thanks for asking about my evening too — that's kind of you. Is there someone from your small group or church who could check in on you this week, maybe even just to pray with you while your body keeps recovering?<span class="t">21:10</span></div><div class="day">Tuesday, Oct 6</div><div class="msg out">Thanks for checking in 🙏 Feeling a bit better today honestly. The kids at school were brilliant this morning — we absolutely killed it with the lesson on fractions. Really made me smile watching them get it 😊<span class="t">12:49</span></div><div class="msg in">It's so good to hear this from you, Kadeen — feeling a bit better today, and then that moment with the kids getting fractions, you lighting up watching it click for them. That's a real gift, especially after the fatigue you've been carrying.
+
+Joy like that matters. It's not separate from your walk with God — it's part of it. A good day, a classroom that clicked, a body that cooperated a little more today — these are worth noticing and giving thanks for, not just pushing past on the way to the next hard thing.
+
+This makes me think of Psalm 118:24: This is the day that the LORD has made. We will rejoice and be glad in it!
+
+Hold onto this day. It doesn't erase the harder ones, but it's real, and it's yours — a sign that good mornings are still possible, even now.
+
+Lord, thank you for today — for strength in Kadeen's body, for the joy of watching those kids learn. Keep giving good moments like this, and meet her in the harder ones too.
+
+Who could you tell about this win today — maybe someone from your small group or Bible study who's been praying for you through the fatigue? A little shared joy goes a long way.<span class="t">12:49</span></div><div class="msg out">Thanks for that 🙏 Yeah, sharing the win actually — told my daughter about the lesson and she was chuffed for me. She's been worried about how tired I've been, so it helped her see I'm on the mend. Still taking it steady though, not pushing too hard just yet.<span class="t">12:51</span></div><div class="msg in">I love this. You shared the win with your daughter, and seeing her chuffed for you, seeing that relief on her face after all her worry, that's a gift in itself. It means she gets to see you on the mend, not just hear about it.
+
+There's something really healthy in what you're doing, Kadeen. You're celebrating the progress and still taking it steady, not rushing past your body's need to heal. That's wisdom, not weakness. Recovery isn't a straight line, and honoring that pace while still letting the people who love you in on the good news is exactly the kind of balance that lasts.
+
+This makes me think of Psalm 103:2-3: Praise the LORD, my soul, and don’t forget all his benefits, who forgives all your sins, who heals all your diseases,
+
+Every bit of strength coming back to you is worth noticing and worth giving thanks for. You don't have to rush the rest of the way to feel like the mending is real.
+
+Lord, thank you for the strength returning to Kadeen's body, bit by bit. Keep steadying each step, and let the relief your daughter felt be a small picture of your care for this whole family. Amen.
+
+Maybe keep letting her in as you go, even the small updates. It sounds like she's walking this with you already, and that's worth leaning into.<span class="t">12:51</span></div><div class="day">Wednesday, Oct 7</div><div class="msg in"><span class="tag">Morning word</span>
+Good morning! Still thinking about what you shared last night about anxiety — may God keep speaking to you today.<span class="t">07:00</span></div></div></section><section class="card" id="kwame"><div class="card-head"><div class="avatar" style="background:#2f4f8a" aria-hidden="true">K</div><div class="who"><div class="name">Kwame</div><div class="role">55 · gig driver</div><div class="chips"><span class="chip">Scarborough</span><span class="chip">new to faith</span></div></div></div><div class="facts"><div class="fact"><b>At home</b><span>with his wife and kids</span></div><div class="fact"><b>Morning word</b><span>asked for 5 am</span></div><div class="fact"><b>How he writes</b><span>short, 'brother', an emoji when it stings</span></div><div class="fact"><b>What weighs</b><span>a rough patch at home; gas prices eating the shifts</span></div></div><p class="story">Kwame drives for a living and the gas prices are eating his shifts. He wrote between runs, said he was fine, and then said the real thing: it has been rough with the family and he is just tired.</p><div class="status"><b>Where the conversation stands:</b> he said he would text Marcus from church the next day.</div><div class="chat"><div class="day">Wednesday, Oct 7</div><div class="msg in">Hey Kwame! Good to hear from you, brother. Sounds like you've put in a long one already and you're heading into another shift this afternoon — that's a lot of hours on your feet, back to back.
+
+Rest isn't just a break between shifts, it's something your body and soul actually need to keep going. Taking that time before you're back out there isn't wasted time, it's wisdom.
+
+This makes me think of Psalm 127:2: It is vain for you to rise up early, to stay up late, eating the bread of toil, for he gives sleep to his loved ones.
+
+However packed your schedule gets, you're not carrying this grind alone — God's near even in the ordinary, tiring stretches of a workday.
+
+Lord, thank you for Kwame's hard work today. Give him real rest now, strength for the afternoon ahead, and a sense of your presence in the middle of the hustle. Amen.
+
+Since it's been a bit — is there someone from your small group or church you could shoot a quick text to today, just to reconnect before things get busy again?<span class="t">16:30</span></div><div class="msg out">thanks for that. honestly been rough with the family lately, work been taking everything out of me. maybe ill reach out to someone<span class="t">16:32</span></div><div class="msg in">It sounds like you're running on empty, Kwame — work pulling everything out of you, and family feeling rough on top of that. That's a lot to carry at the same time, especially when the thing that's supposed to refuel you at home is also feeling heavy right now.
+
+When work takes everything, there's nothing left to bring home — not because you don't love your family, but because you're human, and you can't pour from a cup that's been emptied all day. That's not a failure on your part, it's just where you're at right now.
+
+This makes me think of Matthew 11:28: “Come to me, all you who labor and are heavily burdened, and I will give you rest.
+
+You don't have to have it all figured out tonight. Rest isn't something you earn after everything's fixed — it's offered to you right in the middle of the mess.
+
+Lord, Kwame is worn thin between work and home. Would you meet him in that exhaustion tonight, give him real rest, and soften what's hard with his family. Amen.
+
+That instinct to reach out to someone — don't let it stay just an idea. Maybe a text tonight or tomorrow to someone from your small group or Bible study, just to say things have been heavy lately. You don't have to carry this solo.<span class="t">16:32</span></div><div class="msg out">yeah man i hear you. maybe ill text marcus from church tmrw, havent talked to him in a min. just tired right now honestly 😔<span class="t">16:34</span></div><div class="msg in">Honestly, "just tired" is enough to say. You don't need to explain more than that right now. Sounds like it's been a long stretch and it's finally catching up with you.
+
+Tired isn't a problem to solve tonight — it's just real, and it's okay to let it be real instead of pushing through it one more time.
+
+This makes me think of Matthew 11:28: “Come to me, all you who labor and are heavily burdened, and I will give you rest.
+
+You don't have to carry this by sheer willpower. Rest isn't giving up — it's part of how you keep going.
+
+Lord, meet Kwame in his tiredness tonight. Give his body and mind real rest, and remind him he's not carrying this alone. Amen.
+
+Texting Marcus tomorrow sounds like a good move — not a big thing, just reconnecting with someone who knows you. That's worth following through on.<span class="t">16:34</span></div></div></section>
+  <h2>How it works</h2>
+  <ol class="steps"><li>You send a message in the evening, text or voice, however you are.</li><li>Perto answers in seconds: a short pastoral word and a verse checked word for word against the Bible. Never a verse alone on a hard night.</li><li>In the morning, at the hour you chose, a word for the day arrives, tied to what you brought the night before.</li><li>What you write is yours. Nobody at the church reads it. DELETE removes everything, PAUSE goes quiet.</li></ol>
+  <h2>Try it at Grace Community Church</h2>
+  <p>Open WhatsApp from the link or point your camera at the code. The first message comes pre-filled with the church code.</p>
+  <div class="try"><svg xmlns="http://www.w3.org/2000/svg" width="198" height="198" class="segno"><path transform="scale(6)" class="qrline" stroke="#1b1b1b" d="M2 2.5h7m1 0h1m4 0h2m4 0h1m2 0h7m-29 1h1m5 0h1m2 0h2m1 0h3m1 0h1m2 0h1m2 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m8 0h3m1 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m5 0h1m1 0h3m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m2 0h2m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m7 0h2m1 0h1m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m4 0h1m1 0h3m2 0h1m-21 1h1m3 0h1m1 0h4m1 0h1m1 0h1m3 0h9m2 0h1m-29 1h2m3 0h1m5 0h1m1 0h2m1 0h1m5 0h7m-28 1h1m4 0h1m2 0h1m1 0h1m3 0h2m1 0h1m1 0h1m1 0h1m5 0h1m-22 1h1m2 0h2m2 0h1m2 0h1m1 0h2m1 0h1m1 0h2m1 0h2m-29 1h3m1 0h3m1 0h1m2 0h5m1 0h4m6 0h1m-27 1h1m1 0h1m1 0h1m3 0h1m2 0h1m3 0h1m5 0h7m-29 1h1m3 0h3m1 0h1m1 0h1m1 0h4m4 0h1m2 0h4m1 0h1m-27 1h1m1 0h2m2 0h1m1 0h2m1 0h1m3 0h1m6 0h1m2 0h2m-28 1h1m1 0h1m2 0h1m1 0h2m3 0h1m2 0h1m2 0h3m5 0h1m-28 1h1m1 0h2m1 0h1m1 0h2m1 0h2m1 0h2m1 0h1m1 0h1m3 0h1m1 0h2m1 0h2m-27 1h1m3 0h3m2 0h1m3 0h1m1 0h1m2 0h1m5 0h1m1 0h1m-21 1h1m2 0h2m1 0h2m1 0h3m2 0h2m3 0h2m-29 1h2m1 0h1m1 0h3m1 0h1m3 0h3m3 0h7m2 0h1m-21 1h5m3 0h3m1 0h1m3 0h1m3 0h1m-29 1h7m1 0h2m3 0h3m1 0h4m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h1m3 0h1m2 0h5m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m1 0h1m3 0h2m2 0h1m2 0h7m1 0h1m-28 1h1m1 0h3m1 0h1m2 0h6m1 0h1m1 0h1m2 0h1m6 0h1m-29 1h1m1 0h3m1 0h1m3 0h2m1 0h1m1 0h1m1 0h2m2 0h1m3 0h4m-29 1h1m5 0h1m6 0h8m1 0h1m1 0h2m1 0h2m-29 1h7m1 0h1m2 0h1m1 0h1m1 0h2m3 0h2m1 0h2m2 0h1"/></svg>
+<div><p style="margin:0 0 4px"><strong>Grace Community Church</strong> · Toronto</p>
+    <a class="cta" href="https://wa.me/message/TN62AMEYSMWNA1" target="_blank" rel="noopener">Open in WhatsApp</a>
+    <p class="pilot">Perto is in a pilot. During the pilot, Rodrigo (who builds Perto) may read conversations to improve the replies. Never the church. DELETE removes everything at once.</p></div></div>
+</main>
+<footer class="site">
+  <span>© 2026 Bridge Intelligence Inc.</span>
+  <a href="/en/privacy.html">Privacy policy</a>
+  <span>Conversations generated on 2026-10-10 with the claude-sonnet-5 model. Times in Toronto.</span>
+  <span>Portraits are initials, not photos. No real person.</span>
+  <span><strong>In crisis, right now: call or text 988</strong></span>
+</footer>
+</div>
+</body>
+</html>

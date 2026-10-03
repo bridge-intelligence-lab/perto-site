@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uma semana com o Perto na Vida Nova</title>
+<meta name="description" content="Conversas de demonstração do Perto com personagens fictícios da Igreja Vida Nova, em Presidente Prudente.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&display=swap">
+<style>
+:root{--bg:#f7f5f0;--panel:#fff;--ink:#1f2a24;--muted:#5d6b63;--line:#e2ded5;--accent:#1f5e46;--accent-ink:#fff;--accent-soft:#e4efe8;--warn-bg:#fff4cf;--warn-ink:#5a4300;--chat:#ece7dc;--out:#d9f5c9;--in:#fff;--serif:"Lora",Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11161a;--panel:#181f24;--ink:#e8ebe9;--muted:#a3ada7;--line:#2a333a;--accent:#6fbf95;--accent-ink:#0c1a13;--accent-soft:#1b2b24;--warn-bg:#3a2f08;--warn-ink:#ffe08a;--chat:#0e1317;--out:#1f3b22;--in:#222b31}}
+:root[data-theme="dark"]{--bg:#11161a;--panel:#181f24;--ink:#e8ebe9;--muted:#a3ada7;--line:#2a333a;--accent:#6fbf95;--accent-ink:#0c1a13;--accent-soft:#1b2b24;--warn-bg:#3a2f08;--warn-ink:#ffe08a;--chat:#0e1317;--out:#1f3b22;--in:#222b31}
+*{box-sizing:border-box}html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans);padding-inline:16px}
+a{color:var(--accent);text-underline-offset:3px}
+.wrap{max-width:68ch;margin:0 auto;padding-block:24px 64px}
+header.site{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:8px 28px}
+.brand{font:600 22px/1 var(--serif);color:var(--ink);text-decoration:none}.brand small{font:400 13px/1 var(--sans);color:var(--muted);margin-left:8px}
+nav.site{display:flex;gap:16px;font-size:15px}nav.site a{color:var(--muted);text-decoration:none}
+h1{font:600 clamp(28px,6vw,40px)/1.15 var(--serif);margin:0 0 12px;text-wrap:balance}
+h2{font:600 24px/1.25 var(--serif);margin:40px 0 10px;text-wrap:balance}
+p,li{max-width:68ch}.lead{font-size:19px;color:var(--muted);margin-top:0}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+.warn{background:var(--warn-bg);color:var(--warn-ink);padding:12px 16px;border-radius:10px;font-size:15px;margin:16px 0 28px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:28px 0}
+.card-head{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:18px;align-items:center}
+.avatar{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;font:600 34px/1 var(--serif);color:#fff;letter-spacing:.02em}
+.card-head img{width:88px;height:88px;border-radius:50%;object-fit:cover;display:block}
+.who{display:grid;gap:4px;min-width:0}.who .name{font:600 26px/1.1 var(--serif)}.who .role{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.chip{font-size:13px;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;padding:0 18px 16px}
+.fact b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.fact span{font-size:16px}
+@media (max-width:480px){.facts{grid-template-columns:1fr}}
+.story{padding:0 18px 16px;font-size:16px;margin:0}
+.status{margin:0 18px 16px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);font-size:15px}
+.chat{background:var(--chat);padding:14px 12px;display:grid;gap:8px}
+.day{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;text-align:center;margin:10px 0 4px}
+.msg{max-width:86%;padding:8px 12px;border-radius:12px;font-size:15.5px;line-height:1.45;box-shadow:0 1px 0 rgba(0,0,0,.06);white-space:pre-line;position:relative}
+.msg.out{background:var(--out);justify-self:end;border-bottom-right-radius:3px}
+.msg.in{background:var(--in);justify-self:start;border-bottom-left-radius:3px}
+.msg .t{display:block;font-size:11.5px;color:var(--muted);text-align:right;margin-top:3px}
+.msg .tag{display:inline-block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:4px}
+.msg .verse{font:italic 15.5px/1.45 var(--serif);color:var(--accent)}
+.steps{counter-reset:step;list-style:none;padding:0;margin:16px 0;display:grid;gap:12px}
+.steps li{counter-increment:step;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 56px;position:relative}
+.steps li::before{content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:600 15px/28px var(--sans);text-align:center}
+.try{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:16px}
+.try svg{width:150px;height:150px;background:#fff;border-radius:10px;padding:6px}
+@media (max-width:480px){.try{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.cta{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:12px 18px;border-radius:10px;margin-top:8px}
+.pilot{font-size:14px;color:var(--muted);margin-top:12px}
+footer.site{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 20px}
+footer.site a{color:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <a class="brand" href="/">Perto <small>perto.life</small></a>
+  <nav class="site"><a href="/">Início</a><a href="/igrejas.html">Para igrejas</a><a href="/privacidade.html">Privacidade</a><a href="/en/">English</a></nav>
+</header>
+<main>
+  <div class="eyebrow">Perto · demonstração com personagens fictícios</div>
+  <h1>Uma semana com o Perto na Vida Nova</h1>
+  <p class="lead">O Perto é o companheiro pastoral da Igreja Vida Nova no WhatsApp. Para mostrar como ele conversa, criamos personagens fictícios da região de Presidente Prudente e deixamos cada um escrever durante uma semana. O que o Perto respondeu está aqui, sem edição.</p>
+  <div class="warn">Nada aqui é de gente real. Os três personagens foram inventados por um programa de computador para testar o Perto. As respostas do Perto, sim, são de verdade: são exatamente o que ele responderia a você.</div>
+  <section class="card" id="josefa"><div class="card-head"><div class="avatar" style="background:#1f5e46" aria-hidden="true">J</div><div class="who"><div class="name">Josefa</div><div class="role">62 anos · auxiliar administrativo</div><div class="chips"><span class="chip">Regente Feijó</span><span class="chip">nova na fé</span></div></div></div><div class="facts"><div class="fact"><b>Em casa</b><span>com os pais</span></div><div class="fact"><b>Palavra da manhã</b><span>pediu às 6h30</span></div><div class="fact"><b>Jeito de escrever</b><span>longo, caprichado, 'querido' no fim</span></div><div class="fact"><b>O que pesa</b><span>o filho desempregado; a vida de quem veio de longe</span></div></div><p class="story">Josefa veio de outro estado atrás de trabalho. O filho está desempregado e pedala a cidade inteira atrás de vaga. Ela escreveu no domingo contando de um curso técnico gratuito que viu no jornal. Ao longo da semana a conversa virou outra coisa: o cansaço dela, o corpo doendo, a ansiedade à noite, e a coragem de bater na porta da pastora.</p><div class="status"><b>Onde a conversa está:</b> na sexta à noite ela contou que passou na casa da pastora, foi ouvida sem julgamento, e vai fazer uma avaliação de saúde.</div><div class="chat"><div class="day">quarta, 7 de out</div><div class="msg out">Oi, muito obrigada mesmo por tudo isso. Voce tem razao, preciso conversar com meu pastor sobre isso. Ele conhece muita gente na regiao e talvez possa ajudar meu filho de alguma forma. A gente ta realmente cansada mas confio em Deus. Vou passar esse curso do IFSP pra ele vr se consegue se inscrever. Obgda pelo apoio e pelas oracoes 🙏<span class="t">21:46</span></div><div class="msg in">Que bom ouvir isso, Josefa. Dá pra sentir o alívio na sua mensagem — vocês estão cansadas, mas você já deu um passo importante: decidiu não carregar isso sozinha e vai levar ao seu pastor, que pode abrir portas pro seu filho. Isso é coragem, não desistência.
+
+Confiar em Deus e agir não são coisas opostas — muitas vezes a resposta de Deus vem justamente através de gente que se move, como seu pastor buscando contatos, ou você correndo atrás desse curso do IFSP. Cuidar do seu filho assim, mesmo cansada, é um tipo de amor que não aparece nas redes, mas Deus vê.
+
+Isso me faz pensar em Salmos 127:3: "Eis que os filhos são um presente do SENHOR; o fruto do ventre é uma recompensa."
+
+O cansaço de hoje não anula o cuidado que você tem investido nele todos esses dias. Isso conta, e vai continuar contando.
+
+Pai, obrigado pela abertura do coração de Josefa em buscar ajuda. Te peço sabedoria para essa conversa com o pastor, portas reais para o filho dela, e descanso para o cansaço que ela carrega. Amém.
+
+Já que a conversa com o pastor está encaminhada, talvez valha também levar esse pedido à sua célula essa semana — não só o curso do IFSP, mas o cansaço mesmo, pra ter gente orando com vocês de perto, não só por vocês.<span class="t">21:46</span></div><div class="msg out">Oi, vou sim conversar com meu pastor em breve. Ele é muito atencioso e conhece bastante gente mesmo. Sobre levar pra célula, acho que é uma boa ideia sim, preciso mesmo de apoio de perto porque tô cansada demais. Vou conversar com ele sobre isso tb. Obgda por estar aqui comigo nessa jornada, é um alívio imenso 🙏<span class="t">21:48</span></div><div class="msg in">Que bom ouvir isso, Josefa. Dá pra sentir o alívio na sua mensagem — você reconhecendo que tá cansada demais e decidindo buscar apoio de perto, isso já é um passo corajoso, não pequeno.
+
+Cansaço acumulado não se resolve sozinho, e você não precisa carregar essa fase do desemprego como se fosse só sua. Buscar gente de confiança — seu pastor, sua célula — é exatamente o tipo de cuidado que sustenta quando as forças faltam.
+
+Isso me faz pensar em Gálatas 6:2: "Levai as cargas uns dos outros, e assim cumprireis a lei de Cristo."
+
+Você não está pedindo demais ao pedir ajuda — é assim que a fé foi pensada para funcionar, em comunidade, carregando peso junto.
+
+Senhor, obrigado por essa abertura no coração de Josefa. Te peço descanso para o corpo e a mente dela, e que as conversas com o pastor e com a célula tragam o apoio concreto que ela precisa agora. Amém.
+
+Marca logo essa conversa com seu pastor e leva o assunto pra célula essa semana, sem esperar se sentir "pronta demais" — cansaço também é motivo suficiente para pedir companhia.<span class="t">21:48</span></div><div class="day">quinta, 8 de out</div><div class="msg in"><span class="tag">Palavra da manhã</span>
+Bom dia! Ainda pensando no que você trouxe ontem à noite sobre desemprego — que Deus continue falando com você hoje.<span class="t">06:00</span></div><div class="msg out">Oi, obgda pela palavra de hj de manhã. Acordei cansada msm, mas li e me fez bem. Tô tentando ter fé que as coisas vão melhorar, sabe? Ontem conversei com meu pastor e ele já ta me ajudando a pensar em como levar isso pra célula. É estranho falar dessas coisas, mas tô tentando confiar que Deus ta no controle. Tmj 🙏<span class="t">13:05</span></div><div class="msg in">Que bom ouvir você, Josefa. Dá pra sentir que mesmo cansada essa manhã, você escolheu continuar tentando confiar — e já é coisa grande ter dado esse passo de conversar com seu pastor sobre o que está vivendo.
+
+Fé não é fingir que está tudo bem, é continuar caminhando mesmo cansada, levando a situação para quem pode orar com você. Você não está esperando sozinha — já está deixando outras pessoas entrarem nisso, e isso também é um jeito de confiar.
+
+Isso me faz pensar em Colossenses 4:12: "Epafras, que é um de vós, servo de Cristo, vos saúda. Ele sempre luta por vós em orações, para que fiqueis íntegros e plenos em toda a vontade de Deus."
+
+Esse cansaço de hoje não anula a fé que você está exercitando — as duas coisas podem conviver, e Deus não está longe de nenhuma delas.
+
+Senhor, obrigado pelo coração de Josefa que, mesmo cansado, continua buscando o Senhor. Peço força pros dias de espera e que ela sinta sua presença enquanto esse processo caminha. Amém.
+
+Que bom que já vai levar isso pra célula — continue com esse plano, tá? Não precisa carregar essa espera sozinha, e sua igreja já está de braços abertos pra orar com você nisso.<span class="t">13:05</span></div><div class="msg out">Oi Perto, obrigada msm pelas palavras. Hj foi um dia difícil, o corpo continua pesado e a ansiedade tá alta — sabe aquele sentimento de q as coisas n vão melhorar? Tô sentindo isso agora à noite. Mas conversei c a célula sobre tudo isso, e eles oraram cmg. Vc tá certo q n preciso ter tudo resolvido pra confiar — só preciso continuar tentando, mesmo cansada. Vou descansar agora e amanhã tiro mais força. Obrigada por continuar aqui. 🙏<span class="t">20:36</span></div><div class="msg in">Josefa, que bom te ouvir — mas eu escuto também o cansaço nessa mensagem. O corpo pesado, a ansiedade alta, esse pensamento de que as coisas não vão melhorar batendo justo à noite, quando a gente fica mais sozinha com os próprios pensamentos. Isso é pesado de carregar, mesmo tendo sido um dia com coisas boas também.
+
+Confiar sem ter tudo resolvido não é fraqueza, é coragem — e você fez isso hoje ao dividir com a célula em vez de guardar só pra você. Continuar tentando mesmo cansada já é uma forma de fé que fala mais alto do que qualquer sentimento de desânimo da noite.
+
+Isso me faz pensar em 1 Pedro 5:7: "lançando sobre ele toda a vossa ansiedade; porque ele tem cuidado de vós."
+
+Esse peso que você sente agora não é do tamanho do amanhã — e você não precisa vencer tudo essa noite, só descansar o que der pra descansar.
+
+Pai, cuida do corpo cansado e do coração ansioso da Josefa essa noite. Dá a ela um sono que descansa de verdade, e lembra ela, quando acordar, de que não está sozinha nisso.
+
+Que bom que a célula orou com você — talvez valha contar pra eles também como você está chegando no fim do dia, não só nos momentos de oração. Eles já mostraram que querem caminhar com você nisso.<span class="t">20:36</span></div><div class="day">sexta, 9 de out</div><div class="msg in"><span class="tag">Palavra da manhã</span>
+Bom dia! Ainda pensando no que você trouxe ontem à noite sobre medo — que Deus continue falando com você hoje.<span class="t">06:00</span></div><div class="msg out">Opa, obrigada pela palavra de hj de manha. Ajudou sim. Ja passei na casa da pastora agora, conversei com ela sobre tudo q anda pesando. Ela me ouviu direitinho, sabe? Nao julgou nada. A gente conversou bastante e eu me senti menos sozinha depois. Ela tb falou que vou passar por uma avaliacao, pq ela quer ter ctz de q nada ta muito errado. Fiquei mais tranquila dps. Agora vou descansar melhor hj a noite, graças a Deus. Obrigada Perto, por estar ai junto cmg nessa jornada 🙏<span class="t">19:31</span></div><div class="msg in">Que alegria ler isso, Josefa! Você foi atrás, abriu o coração com a pastora, foi ouvida sem julgamento e saiu de lá mais leve. Isso não é pouco — é coragem de verdade.
+
+Sentir-se menos sozinha depois de dividir o que pesava é exatamente o cuidado de Deus acontecendo através de gente. Ele usa pessoas reais, de carne e osso, pra carregar o que é pesado demais pra carregar sozinha.
+
+Isso me faz pensar em Deuteronômio 31:6: "Esforçai-vos e tende ânimo; não temais, nem tenhais medo deles: que o SENHOR teu Deus é o que vai contigo: não te deixará nem te desamparará."
+
+Esse descanso que você sente hoje à noite é sinal de que algo começou a se mover pro lugar certo dentro de você. Segura essa paz, mesmo que a avaliação ainda traga perguntas.
+
+Pai, obrigado pela coragem da Josefa de buscar ajuda e pelo cuidado da pastora com ela. Te peço descanso de verdade pra essa noite, e paz pro que vier na avaliação. Amém.
+
+Que bom que você já tem a pastora por perto — continue nessa conversa aberta com ela, e se puder, leve isso também pra sua célula ou grupo de oração essa semana, pra ter mais gente te acompanhando nesse momento.<span class="t">19:31</span></div></div></section><section class="card" id="maria"><div class="card-head"><div class="avatar" style="background:#8a3b1f" aria-hidden="true">M</div><div class="who"><div class="name">Maria</div><div class="role">45 anos · desempregada</div><div class="chips"><span class="chip">Presidente Prudente</span><span class="chip">voltando pra igreja</span></div></div></div><div class="facts"><div class="fact"><b>Em casa</b><span>com os pais</span></div><div class="fact"><b>Palavra da manhã</b><span>pediu às 6h</span></div><div class="fact"><b>Jeito de escrever</b><span>longo, falado, cheio de 'sabe?'</span></div><div class="fact"><b>O que pesa</b><span>ficar parada; a dúvida se Deus fala com ela</span></div></div><p class="story">Maria sempre trabalhou e agora está parada. Viu uma vaga de curso técnico gratuito e ficou na dúvida: é Deus mostrando um caminho, ou é ela querendo acreditar que tudo tem propósito? Foi com essa pergunta que ela escreveu, tentando voltar pra igreja 'com o coração diferente dessa vez'.</p><div class="status"><b>Onde a conversa está:</b> vai levar a vaga e a dúvida pra reunião da célula na segunda.</div><div class="chat"><div class="day">sexta, 9 de out</div><div class="msg in">Maria, dá pra sentir o quanto você está tentando se segurar em alguma coisa boa nesse meio tempo sem emprego — essa vaga do IFSP apareceu e você quis acreditar que era sinal, mas logo depois vem a dúvida: será que é Deus mesmo ou sou eu querendo que seja? Essa oscilação entre esperança e desconfiança de si mesma é cansativa, e faz sentido depois de tanto tempo tentando voltar.
+
+Duvidar se o que você sente é de Deus ou é só vontade sua não é falta de fé — é sinal de que você está pensando com cuidado, não se agarrando em qualquer coisa só para aliviar a angústia. Dá pra buscar o curso, confiar seus passos e ainda assim não ter certeza absoluta do "porquê" — as duas coisas podem andar juntas.
+
+Isso me faz pensar em Provérbios 16:3: "Confia tuas obras ao SENHOR, e teus pensamentos serão firmados."
+
+Você não precisa ter certeza do plano inteiro para dar o próximo passo — só precisa confiar esse passo, um de cada vez, e isso já é fé de verdade.
+
+Senhor, obrigado por Maria continuar tentando, mesmo cansada. Firma os pensamentos dela, confirma os passos que ela está dando, e sustenta essa esperança que ainda resiste mesmo no meio da dúvida. Amém.
+
+Que tal levar essa vaga do IFSP e essa dúvida também para alguém da sua célula ou grupo de estudo essa semana? Às vezes a confirmação que a gente procura vem justamente através de outra pessoa orando e pensando junto.<span class="t">16:59</span></div><div class="msg out">Poxa, que mensagem linda mesmo 😢 Você sabe, eu to aqui lendo e relendo isso e sinto que alguém ta entendendo mesmo sabe... não é só "tenha fé" seco, seco mesmo. Essa coisa de confiar um passo de cada vez sem saber tudo é tipo... respira fundo e deixa comigo por enquanto. Amém pra essa oração também, bateu forte aqui 🙏 Vou sim conversar com as minas da célula sobre isso, inclusive tem reunião segunda agora, então vou trazer tanto essa vaga quanto essa dúvida que você falou. É que ás vezes a gente precisa mesmo que outros olhem junto pra gente conseguir enxergar melhor, né. Obrigada mesmo de verdade, tá ajudando bastante<span class="t">17:01</span></div><div class="msg in">Que bom receber isso de você, Maria. Dá pra sentir o alívio na sua mensagem — como se por um instante o peso tivesse ficado um pouco mais leve, sabendo que alguém realmente te ouviu, sem fórmula pronta.
+
+Confiar um passo de cada vez, sem enxergar o caminho inteiro, não é fraqueza nem falta de fé — é coragem de verdade. E olha que bonito: você já está vivendo isso ao decidir levar tanto a vaga quanto a dúvida pra célula, em vez de carregar sozinha.
+
+Isso me faz pensar em Provérbios 3:5-6: "Confia no SENHOR com todo o teu coração; e não te apoies em teu próprio entendimento. Dá reconhecimento a ele em todas os teus caminhos; e ele endireitará tuas veredas."
+
+Você não precisa ter tudo resolvido hoje pra seguir em frente — só precisa dar o próximo passo, e você já está dando.
+
+Senhor, obrigado por estar perto da Maria nesse momento. Continua endireitando o caminho dela, mesmo quando ela não vê tudo ainda, e dá sabedoria pra segunda-feira. Amém.
+
+Fico feliz que você já vai levar isso pra célula segunda — é exatamente aí, no olhar junto de quem te ama, que a gente costuma enxergar mais claro. Vai com tudo, elas estão do seu lado.<span class="t">17:01</span></div><div class="msg out">Opa, verdade mesmo! Fico feliz demais com tudo isso que você tá falando pra mim, sério 🙏 Já tô mais aliviada sabe, tipo aquele peso que não sai da gente... Vou levar tudo pra segunda com as minas sim, elas vão me ajudar a ver melhor mesmo. Obrigada de verdade por tá aqui comigo nessa, você ta me ajudando muito mesmo 💙<span class="t">17:03</span></div><div class="msg in">Que alívio ler isso, Maria! Dá pra sentir no seu jeito de escrever que aquele peso que vinha te apertando já tá mais leve. Fico feliz de verdade por você.
+
+Esse alívio que você sente não veio do nada — veio de você dar um passo, abrir o jogo, decidir não carregar tudo sozinha. Isso também é fé em movimento, não só sentimento.
+
+Isso me faz pensar em Josué 23:14: "E eis que eu estou para entrar hoje pelo caminho de toda a terra: reconhecei, pois, com todo o vosso coração e com toda vossa alma, que não se perdeu uma palavra de todas a boas palavras que o SENHOR vosso Deus disse de vós; todas vieram até vós, nenhuma delas se perdeu."
+
+Guarda esse momento, Maria: quando a provisão parecer distante de novo, lembra que nenhuma palavra boa de Deus sobre você se perde pelo caminho.
+
+Pai, obrigado pelo alívio que Maria sentiu hoje. Continua guiando os passos dela, e usa as amigas de segunda para trazer luz e clareza nessa busca.
+
+Que bom que você vai levar isso pra suas amigas na segunda — segue com elas mesmo, sem pressa de resolver tudo sozinha. Elas fazem parte do cuidado que Deus já colocou perto de você.<span class="t">17:03</span></div></div></section><section class="card" id="silvia"><div class="card-head"><div class="avatar" style="background:#2f4f8a" aria-hidden="true">S</div><div class="who"><div class="name">Silvia</div><div class="role">27 anos · cortadora de cana</div><div class="chips"><span class="chip">Pirapozinho</span><span class="chip">voltando pra igreja</span></div></div></div><div class="facts"><div class="fact"><b>Em casa</b><span>com o marido e os filhos</span></div><div class="fact"><b>Palavra da manhã</b><span>pediu às 5h30</span></div><div class="fact"><b>Jeito de escrever</b><span>direto, sem rodeio</span></div><div class="fact"><b>O que pesa</b><span>a safra incerta; tensão em casa</span></div></div><p class="story">Silvia corta cana e sabe que o trabalho pode acabar na próxima safra. Numa sexta à tarde viu a notícia de um rapaz que pedalou 20 km e ficou 12 horas numa fila de emprego, e aquilo bateu fundo. Escreveu com medo: de perder o trabalho, de não dar conta da família, de parecer fraca se contasse pra alguém.</p><div class="status"><b>Onde a conversa está:</b> decidiu marcar com uma amiga da célula no fim de semana pra desabafar.</div><div class="chat"><div class="day">sexta, 9 de out</div><div class="msg out">É que vi uma notícia hoje de um rapaz que pedalou 20 km e ficou 12 horas na fila pra tentar um emprego. Isso doeu fundo em mim, sabe. A gente trabalha na cana mas nunca sabe se amanhã continua, e ver alguém fazer tanto esforço assim e provavelmente nem conseguir... Fico com medo. Medo de perder o trabalho, medo de não dar conta da família. E em casa tá tenso mesmo, a gente tá cansado, desgastado. Confio em Deus mas o coração fica pesado.<span class="t">17:28</span></div><div class="msg in">Silvia, dá pra sentir o quanto essa notícia mexeu com você. Ver o esforço daquele rapaz e pensar no seu próprio trabalho na cana, na incerteza do amanhã, isso dói mesmo. Medo de perder o trabalho, medo de não dar conta da família, mais o cansaço e o desgaste tensos lá em casa — é peso em cima de peso.
+
+Esse medo não é falta de confiança em Deus, é fruto de uma realidade concreta e instável que você enfrenta todo dia. Dá pra confiar em Deus e ainda assim sentir o coração apertado — as duas coisas moram juntas, e isso não te diminui em nada.
+
+Isso me faz pensar em Isaías 41:10: "Não temas, porque eu estou contigo; não te assombres, porque eu sou teu Deus. Eu te fortaleço, te ajudo, e te sustento com a minha mão direita de justiça."
+
+Você não precisa carregar esse medo sozinha nem fingir que ele não existe. Deus sustenta mesmo quando o chão parece instável, e isso vale pra hoje, não só pra um futuro distante.
+
+Pai, vem perto da Silvia agora. Sustenta o coração dela nesse medo do amanhã, cuida do trabalho dela e da família, e traz um pouco de alívio pro cansaço que está em casa. Amém.
+
+Será que dá pra levar isso pra sua célula ou grupo de estudo essa semana? Às vezes só de dividir esse peso com gente que ora junto com você, ele já fica mais leve de carregar.<span class="t">17:28</span></div><div class="msg out">Vou conversar sim, preciso mesmo. Obrigada por estar aqui. Vou tentar levar pra célula, mas tô com medo de parecer fraca sabe. Mas seu texto me ajudou, mesmo com tudo pesado aqui em casa.<span class="t">19:35</span></div><div class="msg in">Que bom ouvir você dizendo isso, Silvia. E eu entendo esse medo de levar pra célula e parecer fraca — mas me conta uma coisa: quando alguém da sua célula divide algo pesado, você acha a pessoa fraca, ou acha corajosa? Pois é. Com você é igual.
+
+Pedir ajuda não é sinal de fraqueza, é sinal de que você sabe que não precisa carregar tudo sozinha. Com tudo pesado em casa, mostrar isso pra outras pessoas de fé é um ato de coragem, não de fragilidade.
+
+Isso me faz pensar em 2 Timóteo 1:7: "Pois Deus não nos deu espírito de medo; mas sim de força, de amor, e de moderação."
+
+Esse medo não define quem você é. Você já deu o passo de querer conversar — isso já é força trabalhando em você, mesmo que o medo ainda esteja por perto.
+
+Pai, obrigado por Silvia estar disposta a abrir o coração. Peço que o Senhor tire dela esse medo de parecer fraca e dê coragem pra se abrir com quem ela confia. Sustenta ela nesse peso de casa, Senhor.
+
+Que tal escolher uma pessoa específica da célula, antes mesmo do encontro, pra avisar que você quer conversar sobre algo que está pesando? Às vezes falar com uma pessoa só já destrava o resto.<span class="t">19:35</span></div><div class="msg out">Tá bom, vou tentar. Tem uma menina lá da célula que sempre me ouve mesmo, vou falar com ela essa semana. Obrigada mesmo, tá me ajudando bastante.<span class="t">19:37</span></div><div class="msg in">Que bom ouvir isso, Silvia. Dar esse passo de procurar a menina da célula já diz muito sobre como você está cuidando de si mesma, mesmo no meio do medo que você vem carregando.
+
+Buscar conselho não é sinal de fraqueza — é sabedoria. Ninguém foi feito pra decifrar tudo sozinho, e abrir o coração pra alguém de confiança é parte de como Deus cuida da gente, através de gente.
+
+Isso me faz pensar em Provérbios 15:22: "Os planos fracassam quando não há bom conselho; mas com abundância de conselheiros eles se confirmam."
+
+Você não precisa ter todas as respostas agora. Só dar esse próximo passo já é suficiente por hoje.
+
+Pai, obrigado por essa amiga que Silvia vai procurar. Dá sabedoria pra conversa dessa semana e acalma o coração dela enquanto isso. Amém.
+
+Combine logo esse encontro, nem que seja um café rápido depois da célula — colocar uma data já ajuda a não deixar pra depois.<span class="t">19:37</span></div><div class="msg out">Vou marcar com ela no fim de semana. Preciso mesmo desabafar tudo isso que tá dentro de mim. Essa história do rapaz me marcou demais, mas sabe, aqui em casa é diferente. A gente tá passando dificuldade e às vezes fico pensando se vou conseguir reagir como ele reagiu, sabe. Mas vou tentar ter coragem como você disse.<span class="t">20:43</span></div><div class="msg in">Que bom que você vai marcar com ela esse fim de semana — isso que você carrega dentro, de precisar desabafar tudo, já é pesado de segurar sozinha. E percebo que a história desse rapaz mexeu com você de um jeito que foi direto na dificuldade real que vocês estão vivendo em casa. Ficar se perguntando se vai conseguir reagir com a mesma coragem dele é humano, não é fraqueza.
+
+Coragem quase nunca chega antes da situação — ela costuma aparecer no meio dela, passo a passo, não como um sentimento pronto que você precisa ter guardado de antemão. Você não precisa saber hoje como vai reagir lá na frente; precisa só do que esse dia está pedindo.
+
+Isso me faz pensar em Josué 1:9: "Olha que te mando que te esforces e sejas valente: não temas nem desmaies, porque o SENHOR teu Deus será contigo onde quer que fores."
+
+Você não está pedindo coragem no vazio — está pedindo enquanto continua cuidando de casa, enquanto continua tentando. Isso já é uma forma de coragem acontecendo agora.
+
+Senhor, fica perto da Silvia nessa dificuldade de casa. Dá a ela força para o que vier, e paz para o que ainda não sabe como vai ser. Amém.
+
+Esse desabafo que você vai ter com ela no fim de semana já é um passo bonito — e talvez valha também levar essa aflição pela dificuldade em casa para sua célula ou alguém de confiança da igreja, pra não carregar isso só entre vocês duas.<span class="t">20:43</span></div></div></section>
+  <h2>Como funciona</h2>
+  <ol class="steps"><li>Você manda uma mensagem à noite, texto ou áudio, do jeito que estiver.</li><li>O Perto responde em segundos: uma palavra pastoral curta e um versículo conferido letra por letra na Bíblia. Nunca um versículo sozinho numa hora difícil.</li><li>De manhã, no horário que você escolheu, chega uma palavra para o dia, ligada ao que você trouxe na véspera.</li><li>O que você escreve é seu. Ninguém da igreja lê. APAGAR remove tudo, PAUSAR silencia.</li></ol>
+  <h2>Experimente na Igreja Vida Nova</h2>
+  <p>Abra o WhatsApp pelo link ou aponte a câmera para o código. A primeira mensagem já vem pronta, com o código da igreja.</p>
+  <div class="try"><svg xmlns="http://www.w3.org/2000/svg" width="198" height="198" class="segno"><path transform="scale(6)" class="qrline" stroke="#1b1b1b" d="M2 2.5h7m4 0h2m1 0h1m1 0h1m2 0h2m1 0h7m-29 1h1m5 0h1m2 0h1m1 0h2m2 0h1m1 0h2m1 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h1m3 0h5m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m2 0h1m1 0h4m3 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m5 0h1m1 0h2m4 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h5m2 0h2m2 0h1m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-18 1h1m1 0h1m3 0h2m1 0h1m-21 1h1m2 0h1m1 0h2m1 0h3m1 0h1m1 0h4m3 0h1m1 0h1m-24 1h3m1 0h2m1 0h1m2 0h2m1 0h1m1 0h4m1 0h3m2 0h1m2 0h1m-28 1h3m1 0h2m1 0h1m2 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h5m-28 1h1m1 0h3m2 0h4m2 0h1m1 0h2m6 0h2m1 0h2m-27 1h1m2 0h1m1 0h2m1 0h3m2 0h1m2 0h2m1 0h1m1 0h1m2 0h1m1 0h2m-28 1h1m1 0h1m4 0h2m1 0h1m1 0h2m1 0h6m-21 1h2m2 0h4m1 0h2m1 0h2m3 0h1m1 0h2m1 0h1m1 0h4m-28 1h1m1 0h1m1 0h1m1 0h4m1 0h1m3 0h4m2 0h1m1 0h2m1 0h1m-27 1h2m1 0h1m1 0h3m4 0h1m1 0h1m3 0h3m5 0h1m-27 1h1m1 0h3m2 0h2m1 0h1m1 0h4m1 0h1m2 0h2m2 0h1m2 0h1m-29 1h1m3 0h4m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m2 0h2m-24 1h1m6 0h1m1 0h1m2 0h3m2 0h2m3 0h2m-29 1h1m1 0h1m1 0h3m4 0h1m5 0h1m2 0h5m1 0h1m-19 1h3m3 0h1m5 0h1m3 0h1m1 0h3m-29 1h7m2 0h3m6 0h1m1 0h1m1 0h1m1 0h1m2 0h1m-28 1h1m5 0h1m1 0h3m3 0h2m4 0h1m3 0h4m-28 1h1m1 0h3m1 0h1m5 0h1m2 0h1m4 0h5m2 0h2m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m4 0h1m3 0h2m1 0h6m-28 1h1m1 0h3m1 0h1m3 0h1m5 0h3m5 0h3m1 0h1m-29 1h1m5 0h1m3 0h2m1 0h1m2 0h3m1 0h1m3 0h1m2 0h1m-28 1h7m1 0h3m1 0h2m1 0h1m4 0h2m1 0h2m2 0h1"/></svg>
+<div><p style="margin:0 0 4px"><strong>Igreja Vida Nova</strong> · Presidente Prudente, SP</p>
+    <a class="cta" href="https://wa.me/message/4QT3QHINX6O5O1" target="_blank" rel="noopener">Abrir no WhatsApp</a>
+    <p class="pilot">O Perto está em fase piloto. Durante o piloto, o Rodrigo (quem constrói o Perto) pode ler as conversas para melhorar as respostas. Nunca a igreja. APAGAR remove tudo na hora.</p></div></div>
+</main>
+<footer class="site">
+  <span>© 2026 Bridge Intelligence Inc.</span>
+  <a href="/privacidade.html">Política de privacidade</a>
+  <span>Conversas geradas em 2026-10-10 com o modelo claude-sonnet-5. Horários de Presidente Prudente, SP.</span>
+  <span>Retratos: iniciais, não fotos. Nenhuma pessoa real.</span>
+  <span><strong>Em crise, agora: CVV 188</strong></span>
+</footer>
+</div>
+</body>
+</html>
