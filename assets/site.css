@@ -65,8 +65,8 @@ p, li { max-width: 68ch; }
 .promises li { padding: 12px 14px; background: var(--accent-soft); border-radius: 10px; }
 .promises strong { display: block; margin-bottom: 2px; }
 
-dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 12px 0; }
-dl.facts dt { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .06em; padding-top: 3px; }
+dl.facts { display: grid; grid-template-columns: fit-content(40%) minmax(0, 1fr); gap: 6px 18px; margin: 12px 0; }
+dl.facts dt { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .06em; padding-top: 3px; overflow-wrap: anywhere; }
 dl.facts dd { margin: 0; }
 @media (max-width: 480px) { dl.facts { grid-template-columns: 1fr; } dl.facts dd { margin-bottom: 8px; } }
 
