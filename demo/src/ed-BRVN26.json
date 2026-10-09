@@ -2,7 +2,7 @@
  "lang": "pt-BR",
  "title": "Uma semana com o Perto na Vida Nova",
  "description": "Conversas de demonstração do Perto com personagens fictícios da Igreja Vida Nova, em Presidente Prudente.",
- "lede": "O Perto é o companheiro pastoral da Igreja Vida Nova no WhatsApp. Para mostrar como ele conversa, criamos personagens fictícios da região de Presidente Prudente e deixamos cada um escrever durante uma semana. O que o Perto respondeu está aqui, sem edição.",
+ "lede": "O Perto é o companheiro pastoral da Igreja Vida Nova no WhatsApp. Para mostrar como ele conversa, criamos personagens fictícios da região de Presidente Prudente e deixamos cada um escrever durante uma semana. O que o Perto respondeu está aqui, sem edição — só o nome de uma personagem foi trocado por um mais comum.",
  "qr_svg": "demo/src/qr-BRVN26.svg",
  "faces_dir": "demo/src/faces",
  "deep_link": "https://wa.me/message/OSQ5UAEWG2VTB1",
@@ -12,6 +12,45 @@
   "text": "Estamos resolvendo isso com a Meta."
  },
  "personas": [
+  {
+   "key": "BRVN26:p087",
+   "stem": "maria",
+   "display_name": "Maria",
+   "rename": {
+    "Josefa": "Maria"
+   },
+   "role": "62 anos · auxiliar administrativo",
+   "chips": [
+    "Regente Feijó",
+    "nova na fé"
+   ],
+   "facts": [
+    [
+     "Em casa",
+     "com os pais"
+    ],
+    [
+     "Palavra da manhã",
+     "pediu às 6h30"
+    ],
+    [
+     "Jeito de escrever",
+     "longo, caprichado, 'querido' no fim"
+    ],
+    [
+     "O que pesa",
+     "o filho desempregado; a vida de quem veio de longe"
+    ]
+   ],
+   "story": "Maria veio de longe atrás de trabalho. O filho está desempregado há meses e pedala a cidade atrás de vaga. Ela escreveu num domingo contando de um curso técnico gratuito que viu na notícia, pensando nele. Ao longo da semana a conversa virou outra coisa: o cansaço dela, o corpo doendo, a ansiedade que não deixa dormir. A conversa abaixo pega uma quinta à noite e a palavra da manhã seguinte.",
+   "notice": "Repare que o Perto leva a sério a ansiedade que aperta à noite, em vez de passar por cima dela, e que a palavra da manhã de sexta retoma o que ela trouxe na véspera.",
+   "status": "na sexta à noite ela contou que passou na casa da pastora, foi ouvida sem julgamento e vai fazer uma avaliação de saúde.",
+   "events": [
+    "2026-10-08T23:36:00",
+    "2026-10-09T00:46:00",
+    "2026-10-09T09:00:00 morning_word"
+   ]
+  },
   {
    "key": "BRVN26:p078",
    "stem": "tiago",
@@ -39,48 +78,13 @@
      "ansiedade, dívidas, a fila do SUS"
     ]
    ],
-   "story": "Tiago passa o dia em pé no salão e chega em casa sem energia pra mais nada. Faz tempo que não aparece na célula. Numa sexta ele admitiu isso quase de passagem, e o Perto ouviu.",
-   "notice": "Repare que o Perto não cobra o tempo longe da célula; ele trata a mensagem que o Tiago vai mandar como o passo que importa.",
+   "story": "Tiago passa o dia em pé no salão e chega em casa sem energia pra mais nada. Faz tempo que não aparece na célula. Numa terça à noite, saindo do salão, ele escreveu uma linha só. Respondeu às perguntas de cadastro ao longo da semana, e a primeira resposta do Perto chegou na sexta.",
+   "notice": "Repare no pouco que o Tiago escreveu, uma linha só de cansaço, e que a resposta leva esse cansaço a sério sem cobrar mais nada dele.",
    "status": "combinou de mandar mensagem pra alguém da célula naquela noite mesmo.",
    "events": [
-    "2026-10-09T16:25:00 inbound",
-    "2026-10-09T21:22:00",
-    "2026-10-09T21:24:00"
-   ]
-  },
-  {
-   "key": "BRVN26:p074",
-   "stem": "maria",
-   "display_name": "Maria",
-   "role": "45 anos · desempregada",
-   "chips": [
-    "Presidente Prudente",
-    "voltando pra igreja"
-   ],
-   "facts": [
-    [
-     "Em casa",
-     "com os pais"
-    ],
-    [
-     "Palavra da manhã",
-     "pediu às 6h"
-    ],
-    [
-     "Jeito de escrever",
-     "longo, falado, cheio de 'sabe?'"
-    ],
-    [
-     "O que pesa",
-     "ficar parada; a dúvida se Deus fala com ela"
-    ]
-   ],
-   "story": "Maria sempre trabalhou e agora está parada. Viu uma vaga de curso técnico gratuito e ficou na dúvida: é Deus mostrando um caminho, ou é ela querendo acreditar que tudo tem propósito? Foi com essa pergunta que ela escreveu, tentando voltar pra igreja 'com o coração diferente dessa vez'. A conversa abaixo começa na reação dela à primeira resposta do Perto a essa dúvida.",
-   "notice": "Repare que o Perto não decide por ela se a vaga é sinal de Deus: confirma o passo que ela já deu e aponta pra célula de segunda.",
-   "status": "vai levar a vaga e a dúvida pra reunião da célula na segunda.",
-   "events": [
-    "2026-10-09T20:01:00",
-    "2026-10-10T00:14:00 inbound"
+    "2026-10-06T22:30:00 inbound",
+    "2026-10-09T16:21:00 reply",
+    "2026-10-09T16:23:00"
    ]
   },
   {
@@ -114,7 +118,6 @@
    "notice": "Repare que, quando ela diz que tem medo de parecer fraca, o Perto devolve a pergunta e pede que ela escolha uma pessoa da célula pra conversar.",
    "status": "decidiu marcar com uma amiga da célula no fim de semana pra desabafar.",
    "events": [
-    "2026-10-09T20:24:00 inbound",
     "2026-10-09T20:28:00",
     "2026-10-09T22:35:00"
    ]

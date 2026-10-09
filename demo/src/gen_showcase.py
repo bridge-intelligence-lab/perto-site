@@ -19,6 +19,9 @@ The editorial file picks the personas and carries the human-written blurbs:
                  "role": "47 anos · cabeleireiro", "chips": ["..."],
                  "facts": [["Em casa", "..."], ...], "story": "...", "status": "...",
                  "notice": "..."  (optional: one sentence, in our words, on what to notice),
+                 "rename": {"Josefa": "Maria"}  (optional: name substitutions applied to this
+                   persona's bubble texts at render time; the replay stays verbatim, the swap is
+                   declared here, and the page's lede must disclose it),
                  "events": ["2026-10-09T21:22:00", "2026-10-09T21:24:00 inbound", ...]
                    (optional whitelist of timeline events by UTC "at"; a bare timestamp
                     shows every event at that minute, "<at> <kind>" only that kind),
@@ -245,6 +248,8 @@ def build(replay: dict, ed: dict) -> str:
             elif ev["kind"] == "reply" and ev.get("was_crisis"):
                 tag = f'<span class="tag">{S["crisis"]}</span>\n'
             text = (pe.get("overrides") or {}).get(ev["at"], ev["text"])
+            for old, new in (pe.get("rename") or {}).items():
+                text = text.replace(old, new)
             bubbles.append(
                 f'<div class="msg {side}">{tag}{render_text(text, S)}'
                 f'<span class="t">{at.strftime("%H:%M")}</span></div>'
