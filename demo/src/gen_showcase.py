@@ -18,6 +18,7 @@ The editorial file picks the personas and carries the human-written blurbs:
   "personas": [ {"key": "BRVN26:p078", "stem": "tiago", "display_name": "Tiago",
                  "role": "47 anos · cabeleireiro", "chips": ["..."],
                  "facts": [["Em casa", "..."], ...], "story": "...", "status": "...",
+                 "notice": "..."  (optional: one sentence, in our words, on what to notice),
                  "events": ["2026-10-09T21:22:00", "2026-10-09T21:24:00 inbound", ...]
                    (optional whitelist of timeline events by UTC "at"; a bare timestamp
                     shows every event at that minute, "<at> <kind>" only that kind),
@@ -48,6 +49,7 @@ STR = {
         "voice": "áudio transcrito",
         "crisis": "resposta de cuidado",
         "where": "Onde a conversa está",
+        "notice": "O que reparar",
         "how_h": "Como funciona",
         "how": [
             "Você manda uma mensagem à noite, texto ou áudio, do jeito que estiver.",
@@ -80,6 +82,7 @@ STR = {
         "voice": "voice note, transcribed",
         "crisis": "care reply",
         "where": "Where the conversation stands",
+        "notice": "What to notice",
         "how_h": "How it works",
         "how": [
             "You send a message in the evening, text or voice, however you are.",
@@ -134,6 +137,7 @@ p,li{max-width:68ch}.lead{font-size:19px;color:var(--muted);margin-top:0}
 .fact b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.fact span{font-size:16px}
 @media (max-width:480px){.facts{grid-template-columns:1fr}}
 .story{padding:0 18px 16px;font-size:16px;margin:0}
+.notice{padding:0 18px 16px;font-size:16px;margin:0}.notice b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .status{margin:0 18px 16px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);font-size:15px}
 .chat{background:var(--chat);padding:14px 12px;display:grid;gap:8px}
 .day{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;text-align:center;margin:10px 0 4px}
@@ -251,6 +255,7 @@ def build(replay: dict, ed: dict) -> str:
             f'<div class="role">{esc(pe.get("role", ""))}</div><div class="chips">{chips}</div></div></div>'
             f'<div class="facts">{facts}</div>'
             f'<p class="story">{esc(pe.get("story", ""))}</p>'
+            + (f'<p class="notice"><b>{S["notice"]}</b>{esc(pe["notice"])}</p>' if pe.get("notice") else "")
             + (f'<div class="status"><b>{S["where"]}:</b> {esc(pe["status"])}</div>' if pe.get("status") else "")
             + f'<div class="chat">{"".join(bubbles)}</div></section>'
         )
