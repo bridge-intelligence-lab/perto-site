@@ -1,6 +1,6 @@
 # perto.life
 
-Static site for Perto: front page, privacy policy and the churches page, in pt-BR (root) and English (`/en/`). No build step, no framework, no cookies. Served by GitHub Pages.
+Static site for Perto: front page, privacy policy, the churches page and two demo pages (`demo/`, `en/demo/`), in pt-BR (root) and English (`/en/`). No build step, no framework, no cookies. Served by GitHub Pages.
 
 ## Files
 
@@ -8,8 +8,9 @@ Static site for Perto: front page, privacy policy and the churches page, in pt-B
 |---|---|
 | `index.html`, `en/index.html` | Front page |
 | `privacidade.html`, `en/privacy.html` | Privacy policy — also the URL Meta needs for the WhatsApp app |
-| `igrejas.html`, `en/churches.html` | Design-partner / interest page |
+| `igrejas.html`, `en/churches.html` | Design-partner / interest page, with the dashboard screenshots |
 | `assets/site.css` | The one stylesheet (tokens, both themes, phone first) |
+| `assets/img/` | Dashboard screenshots on synthetic data (see its README) |
 | `CNAME` | `perto.life` for GitHub Pages |
 
 ## Before publishing (Rodrigo)
