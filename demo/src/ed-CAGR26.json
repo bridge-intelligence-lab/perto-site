@@ -1,0 +1,119 @@
+{
+ "lang": "en",
+ "title": "A week with Perto at Grace Community",
+ "description": "Demo conversations between Perto and fictional members of Grace Community Church, Toronto.",
+ "lede": "Perto is Grace Community Church's pastoral companion on WhatsApp. To show how it talks, we invented fictional members from around Toronto and let each of them write for a week. What Perto replied is here, unedited.",
+ "qr_svg": "demo/src/qr-CAGR26.svg",
+ "faces_dir": "demo/src/faces",
+ "deep_link": "https://wa.me/message/TN62AMEYSMWNA1",
+ "generated_on": "2026-10-03",
+ "personas": [
+  {
+   "key": "CAGR26:p016",
+   "stem": "jun",
+   "display_name": "Jun",
+   "role": "71 · nurse",
+   "chips": [
+    "Etobicoke",
+    "new to faith"
+   ],
+   "facts": [
+    [
+     "At home",
+     "with his wife"
+    ],
+    [
+     "Morning word",
+     "asked for 6 am"
+    ],
+    [
+     "How he writes",
+     "measured, full sentences"
+    ],
+    [
+     "What weighs",
+     "shifts that keep changing; whether the job will last"
+    ]
+   ],
+   "story": "Jun is 71 and still nursing. The shifts keep changing and he is not sure the job will last. He had not told anyone at church how rough it had been, afraid they would think he was not trusting enough. The conversation below picks up at his reply to Perto's first answer, on a Tuesday morning.",
+   "notice": "Notice that Perto names his fear of being judged for not trusting enough, answers it with David and Elijah, and asks him to pick one person at Bible study.",
+   "status": "he decided to tell someone at Bible study that week, and did.",
+   "events": [
+    "2026-10-06T13:24:00",
+    "2026-10-06T13:26:00"
+   ]
+  },
+  {
+   "key": "CAGR26:p070",
+   "stem": "kadeen",
+   "display_name": "Kadeen",
+   "role": "51 · teacher",
+   "chips": [
+    "London, Ontario",
+    "exploring faith"
+   ],
+   "facts": [
+    [
+     "At home",
+     "with her children and grandkids"
+    ],
+    [
+     "Morning word",
+     "asked for 7 am"
+    ],
+    [
+     "How she writes",
+     "British turns of phrase, a 🙏 at the end"
+    ],
+    [
+     "What weighs",
+     "a body still recovering; the dark coming early"
+    ]
+   ],
+   "story": "Kadeen teaches primary school and has been worn down by an illness that would not quite leave. She wrote on a Sunday night, tired, and came back two days later with a win: a fractions lesson that landed, and a daughter relieved to see her on the mend.",
+   "notice": "Notice that Perto celebrates the good day with her before anything else, and that Wednesday's morning word remembers what she shared the night before.",
+   "status": "she messaged her small group leader that week instead of waiting.",
+   "events": [
+    "2026-10-06T16:49:00",
+    "2026-10-06T19:47:00",
+    "2026-10-06T22:40:00",
+    "2026-10-07T11:00:00 morning_word"
+   ]
+  },
+  {
+   "key": "CAGR26:p079",
+   "stem": "kwame",
+   "display_name": "Kwame",
+   "role": "55 · gig driver",
+   "chips": [
+    "Scarborough",
+    "new to faith"
+   ],
+   "facts": [
+    [
+     "At home",
+     "with his wife and kids"
+    ],
+    [
+     "Morning word",
+     "asked for 5 am"
+    ],
+    [
+     "How he writes",
+     "short, 'brother', an emoji when it stings"
+    ],
+    [
+     "What weighs",
+     "a rough patch at home; gas prices eating the shifts"
+    ]
+   ],
+   "story": "Kwame drives for a living and the gas prices are eating his shifts. He wrote between runs, said he was fine, and then said the real thing: it has been rough with the family and he is just tired.",
+   "notice": "Notice how little Perto needs from him: two short messages get one verse and a nudge to text someone from church rather than to keep talking to Perto.",
+   "status": "he said he would text Marcus from church the next day.",
+   "events": [
+    "2026-10-07T20:32:00",
+    "2026-10-07T20:34:00 inbound"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "lang": "pt-BR",
+ "title": "Uma semana com o Perto na Vida Nova",
+ "description": "Conversas de demonstração do Perto com personagens fictícios da Igreja Vida Nova, em Presidente Prudente.",
+ "lede": "O Perto é o companheiro pastoral da Igreja Vida Nova no WhatsApp. Para mostrar como ele conversa, criamos personagens fictícios da região de Presidente Prudente e deixamos cada um escrever durante uma semana. O que o Perto respondeu está aqui, sem edição.",
+ "qr_svg": "demo/src/qr-BRVN26.svg",
+ "faces_dir": "demo/src/faces",
+ "deep_link": "https://wa.me/message/OSQ5UAEWG2VTB1",
+ "generated_on": "2026-10-03",
+ "pilot_note": {
+  "lead": "Por enquanto, o Perto não consegue responder a números do Brasil (+55).",
+  "text": "Estamos resolvendo isso com a Meta."
+ },
+ "personas": [
+  {
+   "key": "BRVN26:p078",
+   "stem": "tiago",
+   "display_name": "Tiago",
+   "role": "47 anos · cabeleireiro",
+   "chips": [
+    "Presidente Prudente",
+    "explorando a fé"
+   ],
+   "facts": [
+    [
+     "Em casa",
+     "com os pais"
+    ],
+    [
+     "Palavra da manhã",
+     "pediu às 6h"
+    ],
+    [
+     "Jeito de escrever",
+     "curto, com emoji, 'vdd' e 'blz'"
+    ],
+    [
+     "O que pesa",
+     "ansiedade, dívidas, a fila do SUS"
+    ]
+   ],
+   "story": "Tiago passa o dia em pé no salão e chega em casa sem energia pra mais nada. Faz tempo que não aparece na célula. Numa sexta ele admitiu isso quase de passagem, e o Perto ouviu.",
+   "notice": "Repare que o Perto não cobra o tempo longe da célula; ele trata a mensagem que o Tiago vai mandar como o passo que importa.",
+   "status": "combinou de mandar mensagem pra alguém da célula naquela noite mesmo.",
+   "events": [
+    "2026-10-09T16:25:00 inbound",
+    "2026-10-09T21:22:00",
+    "2026-10-09T21:24:00"
+   ]
+  },
+  {
+   "key": "BRVN26:p074",
+   "stem": "maria",
+   "display_name": "Maria",
+   "role": "45 anos · desempregada",
+   "chips": [
+    "Presidente Prudente",
+    "voltando pra igreja"
+   ],
+   "facts": [
+    [
+     "Em casa",
+     "com os pais"
+    ],
+    [
+     "Palavra da manhã",
+     "pediu às 6h"
+    ],
+    [
+     "Jeito de escrever",
+     "longo, falado, cheio de 'sabe?'"
+    ],
+    [
+     "O que pesa",
+     "ficar parada; a dúvida se Deus fala com ela"
+    ]
+   ],
+   "story": "Maria sempre trabalhou e agora está parada. Viu uma vaga de curso técnico gratuito e ficou na dúvida: é Deus mostrando um caminho, ou é ela querendo acreditar que tudo tem propósito? Foi com essa pergunta que ela escreveu, tentando voltar pra igreja 'com o coração diferente dessa vez'. A conversa abaixo começa na reação dela à primeira resposta do Perto a essa dúvida.",
+   "notice": "Repare que o Perto não decide por ela se a vaga é sinal de Deus: confirma o passo que ela já deu e aponta pra célula de segunda.",
+   "status": "vai levar a vaga e a dúvida pra reunião da célula na segunda.",
+   "events": [
+    "2026-10-09T20:01:00",
+    "2026-10-10T00:14:00 inbound"
+   ]
+  },
+  {
+   "key": "BRVN26:p001",
+   "stem": "silvia",
+   "display_name": "Silvia",
+   "role": "27 anos · cortadora de cana",
+   "chips": [
+    "Pirapozinho",
+    "voltando pra igreja"
+   ],
+   "facts": [
+    [
+     "Em casa",
+     "com o marido e os filhos"
+    ],
+    [
+     "Palavra da manhã",
+     "pediu às 5h30"
+    ],
+    [
+     "Jeito de escrever",
+     "direto, sem rodeio"
+    ],
+    [
+     "O que pesa",
+     "a safra incerta; tensão em casa"
+    ]
+   ],
+   "story": "Silvia corta cana e sabe que o trabalho pode acabar na próxima safra. Numa sexta à tarde viu a notícia de um rapaz que pedalou 20 km e ficou 12 horas numa fila de emprego, e aquilo bateu fundo. Escreveu com medo: de perder o trabalho, de não dar conta da família, de parecer fraca se contasse pra alguém.",
+   "notice": "Repare que, quando ela diz que tem medo de parecer fraca, o Perto devolve a pergunta e pede que ela escolha uma pessoa da célula pra conversar.",
+   "status": "decidiu marcar com uma amiga da célula no fim de semana pra desabafar.",
+   "events": [
+    "2026-10-09T20:24:00 inbound",
+    "2026-10-09T20:28:00",
+    "2026-10-09T22:35:00"
+   ]
+  }
+ ]
+}
