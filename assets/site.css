@@ -84,3 +84,12 @@ dl.facts dd { margin: 0; }
 footer.site { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 20px; }
 footer.site a { color: inherit; }
 .todo { background: var(--warn-bg); color: var(--warn-ink); padding: 0 6px; border-radius: 4px; font-size: .9em; }
+
+/* Product screenshots (igrejas / churches): one column; wider than the text on big screens, the column width on phones. */
+figure.shot { margin: 20px 0 28px; }
+figure.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+figure.shot figcaption { font-size: 15px; color: var(--muted); margin-top: 8px; max-width: 68ch; }
+@media (min-width: 720px) {
+  figure.shot { --w: min(900px, 100vw - 64px); width: var(--w); margin-inline: calc((100% - var(--w)) / 2); }
+  figure.shot figcaption { margin-inline: auto; }
+}
