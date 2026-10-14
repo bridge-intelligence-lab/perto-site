@@ -72,7 +72,11 @@ STR = {
         "privacy": "Política de privacidade",
         "privacy_href": "/privacidade.html",
         "home_href": "/",
-        "nav": [("/", "Início"), ("/igrejas.html", "Para igrejas"), ("/privacidade.html", "Privacidade"), ("/en/", "English")],
+        "nav": [("/", "Início"), ("/igrejas.html", "Para igrejas"), ("/demo/vida-nova.html", "Demonstração"), ("/privacidade.html", "Privacidade"), ("/en/", "English")],
+        "demo_href": "/demo/vida-nova.html",
+        "to_dark": "Tema escuro",
+        "to_light": "Tema claro",
+        "expect": "Leva um minuto: o Perto pergunta seu nome e a hora da palavra da manhã. No computador, aponte a câmera do celular para o código. APAGAR remove tudo.",
         "weekday": ["segunda", "terça", "quarta", "quinta", "sexta", "sábado", "domingo"],
         "month": ["", "jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"],
         "verse_pat": r"\(?((?:[1-3]\s?)?[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+(?:\s[A-Za-záéíóúâêôãõç]+)?\s\d{1,3}:\d{1,3}(?:[-–]\d{1,3})?)\)?",
@@ -105,7 +109,11 @@ STR = {
         "privacy": "Privacy policy",
         "privacy_href": "/en/privacy.html",
         "home_href": "/en/",
-        "nav": [("/en/", "Home"), ("/en/churches.html", "For churches"), ("/en/privacy.html", "Privacy"), ("/", "Português")],
+        "nav": [("/en/", "Home"), ("/en/churches.html", "For churches"), ("/en/demo/grace.html", "Demo"), ("/en/privacy.html", "Privacy"), ("/", "Português")],
+        "demo_href": "/en/demo/grace.html",
+        "to_dark": "Dark theme",
+        "to_light": "Light theme",
+        "expect": "It takes a minute: Perto asks your name and the hour for your morning word. On a computer, point your phone's camera at the code. DELETE removes everything.",
         "weekday": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "month": ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         "verse_pat": r"\(?((?:[1-3]\s?)?[A-Z][a-z]+(?:\s[A-Za-z]+)?\s\d{1,3}:\d{1,3}(?:[-–]\d{1,3})?)\)?",
@@ -115,16 +123,20 @@ STR = {
 PALETTE = ["#1f5e46", "#8a3b1f", "#2f4f8a", "#6b4a8a", "#a3651a", "#2e6e6e", "#7a2f4a"]
 
 CSS = """
-:root{--bg:#f7f5f0;--panel:#fff;--ink:#1f2a24;--muted:#5d6b63;--line:#e2ded5;--accent:#1f5e46;--accent-ink:#fff;--accent-soft:#e4efe8;--warn-bg:#fff4cf;--warn-ink:#5a4300;--chat:#ece7dc;--out:#d9f5c9;--in:#fff;--serif:"Lora",Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11161a;--panel:#181f24;--ink:#e8ebe9;--muted:#a3ada7;--line:#2a333a;--accent:#6fbf95;--accent-ink:#0c1a13;--accent-soft:#1b2b24;--warn-bg:#3a2f08;--warn-ink:#ffe08a;--chat:#0e1317;--out:#1f3b22;--in:#222b31}}
-:root[data-theme="dark"]{--bg:#11161a;--panel:#181f24;--ink:#e8ebe9;--muted:#a3ada7;--line:#2a333a;--accent:#6fbf95;--accent-ink:#0c1a13;--accent-soft:#1b2b24;--warn-bg:#3a2f08;--warn-ink:#ffe08a;--chat:#0e1317;--out:#1f3b22;--in:#222b31}
+:root{--bg:#f7f5f0;--panel:#fff;--ink:#1f2a24;--muted:#5d6b63;--line:#e2ded5;--accent:#1f5e46;--accent-ink:#fff;--accent-soft:#e4efe8;--warn-bg:#fff4cf;--warn-ink:#5a4300;--chat:#ece7dc;--out:#d9f5c9;--in:#fff;--to-dark:inline;--to-light:none;--serif:"Lora",Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11161a;--panel:#181f24;--ink:#e8ebe9;--muted:#a3ada7;--line:#2a333a;--accent:#6fbf95;--accent-ink:#0c1a13;--accent-soft:#1b2b24;--warn-bg:#3a2f08;--warn-ink:#ffe08a;--chat:#0e1317;--out:#1f3b22;--in:#222b31;--to-dark:none;--to-light:inline}}
+:root[data-theme="dark"]{--bg:#11161a;--panel:#181f24;--ink:#e8ebe9;--muted:#a3ada7;--line:#2a333a;--accent:#6fbf95;--accent-ink:#0c1a13;--accent-soft:#1b2b24;--warn-bg:#3a2f08;--warn-ink:#ffe08a;--chat:#0e1317;--out:#1f3b22;--in:#222b31;--to-dark:none;--to-light:inline}
 *{box-sizing:border-box}html{color-scheme:light dark}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans);padding-inline:16px}
 a{color:var(--accent);text-underline-offset:3px}
 .wrap{max-width:68ch;margin:0 auto;padding-block:24px 64px}
 header.site{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:8px 28px}
 .brand{font:600 22px/1 var(--serif);color:var(--ink);text-decoration:none}.brand small{font:400 13px/1 var(--sans);color:var(--muted);margin-left:8px}
-nav.site{display:flex;gap:16px;font-size:15px}nav.site a{color:var(--muted);text-decoration:none}
+nav.site{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:15px}nav.site a{color:var(--muted);text-decoration:none}nav.site a[aria-current="page"]{color:var(--ink);font-weight:600}
+.theme-toggle{font:500 13px/1 var(--sans);color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 11px;cursor:pointer;white-space:nowrap;align-self:center}
+.theme-toggle:hover{color:var(--ink)}.theme-toggle .to-dark{display:var(--to-dark)}.theme-toggle .to-light{display:var(--to-light)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (max-width:600px){header.site{align-items:center}.theme-toggle{margin-left:auto}nav.site{flex-basis:100%;order:3}}
 h1{font:600 clamp(28px,6vw,40px)/1.15 var(--serif);margin:0 0 12px;text-wrap:balance}
 h2{font:600 24px/1.25 var(--serif);margin:40px 0 10px;text-wrap:balance}
 p,li{max-width:68ch}.lead{font-size:19px;color:var(--muted);margin-top:0}
@@ -155,7 +167,12 @@ p,li{max-width:68ch}.lead{font-size:19px;color:var(--muted);margin-top:0}
 .steps li::before{content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:600 15px/28px var(--sans);text-align:center}
 .try{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:16px}
 .try svg{width:150px;height:150px;background:#fff;border-radius:10px;padding:6px}
-@media (max-width:480px){.try{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.try p{margin:0 0 4px}.try .cta{margin-top:4px}
+.try.top{margin:0 0 28px}
+@media (max-width:600px){.try{grid-template-columns:1fr}.try svg{display:none}}
+.try-bar{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--panel);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));font-size:15px}
+.try-bar .cta{margin-top:0;padding:10px 16px}
+body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 .cta{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:12px 18px;border-radius:10px;margin-top:8px}
 .pilot{font-size:14px;color:var(--muted);margin-top:12px}
 footer.site{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 20px}
@@ -198,6 +215,17 @@ def qr_accessible(svg: str, S) -> str:
     w, h = m.groups()
     attrs = f' viewBox="0 0 {w} {h}" role="img" aria-label="{esc(S["qr_alt"])}"'
     return svg[: m.end()] + attrs + svg[m.end() :]
+
+
+def try_block(S, cong: dict, ed: dict, qr: str, pilot_note: str, source: str, extra_class: str = "") -> str:
+    """The "try it" block: the QR (hidden on phones by CSS) beside the button, the expectation line, the pilot notes."""
+    cls = "try" + (f" {extra_class}" if extra_class else "")
+    return (
+        f'<div class="{cls}">{qr}<div><p><strong>{esc(cong["name"])}</strong> · {esc(cong.get("city", ""))}</p>\n'
+        f'    <p><a class="cta" href="{esc(ed["deep_link"])}" data-source="{source}">{esc(S["try_btn"])}</a></p>\n'
+        f'    <p class="pilot">{esc(S["expect"])}</p>\n'
+        f'    {pilot_note}<p class="pilot">{esc(S["pilot"])}</p></div></div>'
+    )
 
 
 def build(replay: dict, ed: dict) -> str:
@@ -267,13 +295,21 @@ def build(replay: dict, ed: dict) -> str:
     qr = Path(ed["qr_svg"]).read_text() if ed.get("qr_svg") else ""
     qr = re.sub(r"<\?xml[^>]*>\s*", "", qr)
     qr = qr_accessible(qr, S)
-    nav = "".join(f'<a href="{h}">{esc(t)}</a>' for h, t in S["nav"])
+    nav = "".join(
+        f'<a href="{h}"{" aria-current=\"page\"" if h == S["demo_href"] else ""}>{esc(t)}</a>' for h, t in S["nav"]
+    )
     pn = ed.get("pilot_note") or {}
     pilot_note = (
         f'<p class="pilot"><strong>{esc(pn["lead"])}</strong> {esc(pn.get("text", ""))}</p>\n    '
         if pn.get("lead") else ""
     )
     how = "".join(f"<li>{esc(x)}</li>" for x in S["how"])
+    try_top = try_block(S, cong, ed, qr, pilot_note, "demo-top", "top")
+    try_bottom = try_block(S, cong, ed, qr, pilot_note, "demo-bottom")
+    try_bar = (
+        f'<div class="try-bar"><span>{esc(cong["name"])}</span>'
+        f'<a class="cta" href="{esc(ed["deep_link"])}" data-source="demo-bar">{esc(S["try_btn"])}</a></div>'
+    )
     run = replay.get("run", {})
     gen_date = (ed.get("generated_on") or run.get("generated_on") or run.get("ended_sim_time") or "")[:10]
     footer_src = S["footer_src"].format(date=gen_date, model=run.get("perto_model", "claude-sonnet-5"), tz=cong.get("city", ""))
@@ -284,6 +320,8 @@ def build(replay: dict, ed: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(ed['title'])}</title>
 <meta name="description" content="{esc(ed.get('description', ''))}">
+<script>try{{var t=localStorage.getItem('perto-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}}catch(e){{}}</script>
+<script data-goatcounter="https://perto.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&display=swap">
 <style>{CSS}</style>
 </head>
@@ -292,20 +330,20 @@ def build(replay: dict, ed: dict) -> str:
 <header class="site">
   <a class="brand" href="{S['home_href']}">Perto <small>perto.life</small></a>
   <nav class="site">{nav}</nav>
+  <button type="button" class="theme-toggle" data-theme-toggle><span class="to-dark">{esc(S['to_dark'])}</span><span class="to-light">{esc(S['to_light'])}</span></button>
 </header>
 <main>
   <div class="eyebrow">{esc(S['eyebrow'])}</div>
   <h1>{esc(ed['title'])}</h1>
   <p class="lead">{esc(ed['lede'])}</p>
   <div class="warn">{esc(S['warn'])}</div>
+  {try_top}
   {"".join(cards)}
   <h2>{esc(S['how_h'])}</h2>
   <ol class="steps">{how}</ol>
   <h2>{esc(S['try_h'].format(church=cong['name']))}</h2>
   <p>{esc(S['try_p'])}</p>
-  <div class="try">{qr}<div><p style="margin:0 0 4px"><strong>{esc(cong['name'])}</strong> · {esc(cong.get('city', ''))}</p>
-    <a class="cta" href="{esc(ed['deep_link'])}" target="_blank" rel="noopener">{esc(S['try_btn'])}</a>
-    {pilot_note}<p class="pilot">{esc(S['pilot'])}</p></div></div>
+  {try_bottom}
 </main>
 <footer class="site">
   <span>© 2026 Bridge Intelligence Inc.</span>
@@ -315,6 +353,8 @@ def build(replay: dict, ed: dict) -> str:
   <span><strong>{esc(S['crisis_line'])}</strong></span>
 </footer>
 </div>
+{try_bar}
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
 """

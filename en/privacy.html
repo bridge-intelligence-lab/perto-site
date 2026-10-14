@@ -6,6 +6,8 @@
 <title>Privacy — Perto</title>
 <meta name="description" content="What Perto keeps, for how long, who sees it and how to delete it. In plain words, with the commands that work inside WhatsApp.">
 <link rel="alternate" hreflang="pt-BR" href="/privacidade.html">
+<script>try{var t=localStorage.getItem('perto-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script data-goatcounter="https://perto.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -17,9 +19,11 @@
   <nav class="site" aria-label="Pages">
     <a href="/en/">Home</a>
     <a href="/en/churches.html">For churches</a>
+    <a href="/en/demo/grace.html">Demo</a>
     <a href="/en/privacy.html" aria-current="page">Privacy</a>
     <a href="/privacidade.html" lang="pt-BR">Português</a>
   </nav>
+  <button type="button" class="theme-toggle" data-theme-toggle><span class="to-dark">Dark theme</span><span class="to-light">Light theme</span></button>
 </header>
 
 <main>
@@ -93,6 +97,7 @@
     <li><strong>Quality checks, during the pilot</strong>: your message and Perto's reply, without your number, are scored by models from Anthropic, OpenAI and Google. The copies stay in our evaluation system, in Canada.</li>
   </ul>
   <p>That means your data is processed in Canada and in the United States. None of these services receives your name linked to your church, and none may use the content for any other purpose.</p>
+  <p><strong>GoatCounter</strong> — counts visits to this website, without cookies and without storing personal data: the IP address is used only to count a visit and is not kept.</p>
 
   <h2 id="delete">7. How to delete, pause and see</h2>
   <dl class="facts">
@@ -122,5 +127,6 @@
 </footer>
 </div>
 <script>document.querySelector('[data-year]').textContent = new Date().getFullYear();</script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

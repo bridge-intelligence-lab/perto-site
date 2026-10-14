@@ -6,6 +6,8 @@
 <title>Privacidade — Perto</title>
 <meta name="description" content="O que o Perto guarda, por quanto tempo, quem vê e como apagar. Em linguagem simples, com as palavras que funcionam no próprio WhatsApp.">
 <link rel="alternate" hreflang="en" href="/en/privacy.html">
+<script>try{var t=localStorage.getItem('perto-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script data-goatcounter="https://perto.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -17,9 +19,11 @@
   <nav class="site" aria-label="Páginas">
     <a href="/">Início</a>
     <a href="/igrejas.html">Para igrejas</a>
+    <a href="/demo/vida-nova.html">Demonstração</a>
     <a href="/privacidade.html" aria-current="page">Privacidade</a>
     <a href="/en/privacy.html" lang="en">English</a>
   </nav>
+  <button type="button" class="theme-toggle" data-theme-toggle><span class="to-dark">Tema escuro</span><span class="to-light">Tema claro</span></button>
 </header>
 
 <main>
@@ -93,6 +97,7 @@
     <li><strong>Avaliação de qualidade, durante o piloto</strong>: a sua mensagem e a resposta do Perto, sem o seu número, são avaliadas por modelos da Anthropic, da OpenAI e do Google, que dão uma nota à resposta. As cópias ficam no nosso sistema de avaliação, no Canadá.</li>
   </ul>
   <p>Isso significa uma <strong>transferência internacional</strong> de dados para o Canadá e para os Estados Unidos (LGPD, art. 33). Nenhum desses serviços recebe o seu nome ligado à sua igreja, e nenhum é autorizado a usar o conteúdo para outro fim.</p>
+  <p><strong>GoatCounter</strong> — conta as visitas a este site, sem cookies e sem guardar dados pessoais: o endereço IP serve só para contar uma visita e não é guardado.</p>
 
   <h2 id="apagar">7. Como apagar, pausar e ver</h2>
   <dl class="facts">
@@ -122,5 +127,6 @@
 </footer>
 </div>
 <script>document.querySelector('[data-year]').textContent = new Date().getFullYear();</script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

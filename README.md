@@ -2,6 +2,8 @@
 
 Static site for Perto: front page, privacy policy, the churches page and two demo pages (`demo/`, `en/demo/`), in pt-BR (root) and English (`/en/`). No build step, no framework, no cookies. Served by GitHub Pages.
 
+Visits are counted with [GoatCounter](https://www.goatcounter.com/), cookieless: `count.js` in every `<head>` sends one beacon per page view, the WhatsApp buttons send one event each (`event/whatsapp/<source>`, see `assets/site.js`) and the QR codes land on `go/` first so a scan is counted (`event/qr/<church>`) before the redirect to `wa.me`. No cookies, nothing stored in the browser except the theme choice (`localStorage` key `perto-theme`).
+
 ## Files
 
 | Path | What |
@@ -10,6 +12,10 @@ Static site for Perto: front page, privacy policy, the churches page and two dem
 | `privacidade.html`, `en/privacy.html` | Privacy policy — also the URL Meta needs for the WhatsApp app |
 | `igrejas.html`, `en/churches.html` | Design-partner / interest page, with the dashboard screenshots |
 | `assets/site.css` | The one stylesheet (tokens, both themes, phone first) |
+| `assets/site.js` | The one script: the theme toggle and the WhatsApp click counts |
+| `assets/img/faces/` | The six demo portraits (AI-generated, nobody real) at 168 px, for the demo cards on the churches pages |
+| `demo/`, `en/demo/` | The demo pages, generated from `demo/src/` (see its README) |
+| `go/` | `vida-nova.html` and `grace.html`: what the QR codes encode (`https://perto.life/go/vida-nova`, `/go/grace`). Each counts the scan and redirects to the church's `wa.me` link; `noindex` |
 | `assets/img/` | Dashboard screenshots on synthetic data (see its README) |
 | `CNAME` | `perto.life` for GitHub Pages |
 
