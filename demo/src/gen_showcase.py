@@ -76,6 +76,7 @@ STR = {
         "demo_href": "/demo/vida-nova.html",
         "to_dark": "Tema escuro",
         "to_light": "Tema claro",
+        "pilot_notice": 'O Perto está em fase piloto, com um grupo pequeno de convidados. Não é atendimento psicológico, médico ou de emergência. Em crise, agora: <strong>CVV 188</strong> (Brasil) · <strong>988</strong> (Canadá).',
         "expect": "Leva um minuto: o Perto pergunta seu nome e a hora da palavra da manhã. No computador, aponte a câmera do celular para o código. APAGAR remove tudo.",
         "weekday": ["segunda", "terça", "quarta", "quinta", "sexta", "sábado", "domingo"],
         "month": ["", "jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"],
@@ -113,6 +114,7 @@ STR = {
         "demo_href": "/en/demo/grace.html",
         "to_dark": "Dark theme",
         "to_light": "Light theme",
+        "pilot_notice": 'Perto is in a pilot with a small group of invited people. It is not psychological, medical or emergency care. In a crisis, right now: call or text <strong>988</strong> (Canada) · <strong>CVV 188</strong> (Brazil).',
         "expect": "It takes a minute: Perto asks your name and the hour for your morning word. On a computer, point your phone's camera at the code. DELETE removes everything.",
         "weekday": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "month": ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -130,11 +132,13 @@ CSS = """
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans);padding-inline:16px}
 a{color:var(--accent);text-underline-offset:3px}
 .wrap{max-width:68ch;margin:0 auto;padding-block:24px 64px}
+.pilot-notice{background:var(--warn-bg);color:var(--warn-ink);font-size:14px;padding:8px 16px;margin:0 -16px;text-align:center}
 header.site{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:8px 28px}
 .brand{font:600 22px/1 var(--serif);color:var(--ink);text-decoration:none}.brand small{font:400 13px/1 var(--sans);color:var(--muted);margin-left:8px}
 nav.site{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:15px}nav.site a{color:var(--muted);text-decoration:none}nav.site a[aria-current="page"]{color:var(--ink);font-weight:600}
-.theme-toggle{font:500 13px/1 var(--sans);color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 11px;cursor:pointer;white-space:nowrap;align-self:center}
-.theme-toggle:hover{color:var(--ink)}.theme-toggle .to-dark{display:var(--to-dark)}.theme-toggle .to-light{display:var(--to-light)}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;flex:none;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:50%;cursor:pointer;align-self:center}
+.theme-toggle:hover{color:var(--ink)}.theme-toggle svg{display:block;width:18px;height:18px}.theme-toggle .to-dark{display:var(--to-dark)}.theme-toggle .to-light{display:var(--to-light)}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 @media (max-width:600px){header.site{align-items:center}.theme-toggle{margin-left:auto}nav.site{flex-basis:100%;order:3}}
 h1{font:600 clamp(28px,6vw,40px)/1.15 var(--serif);margin:0 0 12px;text-wrap:balance}
@@ -326,11 +330,12 @@ def build(replay: dict, ed: dict) -> str:
 <style>{CSS}</style>
 </head>
 <body>
+<div class="pilot-notice">{S['pilot_notice']}</div>
 <div class="wrap">
 <header class="site">
   <a class="brand" href="{S['home_href']}">Perto <small>perto.life</small></a>
   <nav class="site">{nav}</nav>
-  <button type="button" class="theme-toggle" data-theme-toggle><span class="to-dark">{esc(S['to_dark'])}</span><span class="to-light">{esc(S['to_light'])}</span></button>
+  <button type="button" class="theme-toggle" data-theme-toggle title="{esc(S['to_dark'])}"><span class="to-dark"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.5A9.5 9.5 0 1 0 21.5 12 8 8 0 0 1 12 2.5Z"/></svg><span class="visually-hidden">{esc(S['to_dark'])}</span></span><span class="to-light"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M11 1.5h2v3.2h-2zM11 19.3h2v3.2h-2zM1.5 11h3.2v2H1.5zM19.3 11h3.2v2h-3.2z"/><path transform="rotate(45 12 12)" d="M11 1.5h2v3.2h-2zM11 19.3h2v3.2h-2zM1.5 11h3.2v2H1.5zM19.3 11h3.2v2h-3.2z"/></svg><span class="visually-hidden">{esc(S['to_light'])}</span></span></button>
 </header>
 <main>
   <div class="eyebrow">{esc(S['eyebrow'])}</div>

@@ -14,11 +14,19 @@
     if (t === 'dark' || t === 'light') return t;
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
+  /* The button shows the theme you would switch TO; its title must say the same as the visible icon's hidden text. */
+  function syncTitle() {
+    var btn = document.querySelector('[data-theme-toggle]');
+    var shown = btn && btn.querySelector(current() === 'dark' ? '.to-light' : '.to-dark');
+    if (shown) btn.title = shown.textContent.trim();
+  }
   function toggleTheme() {
     var next = current() === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     store(next);
+    syncTitle();
   }
+  syncTitle();
 
   document.addEventListener('click', function (e) {
     var btn = e.target.closest && e.target.closest('[data-theme-toggle]');
