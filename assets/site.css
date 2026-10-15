@@ -10,6 +10,8 @@
   --accent-soft: #e4efe8;
   --warn-bg: #fff4cf;
   --warn-ink: #5a4300;
+  --to-dark: inline;        /* the theme toggle shows the theme you would switch TO */
+  --to-light: none;
   --serif: "Lora", Georgia, "Times New Roman", serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -18,12 +20,14 @@
     --bg: #11161a; --panel: #181f24; --ink: #e8ebe9; --muted: #a3ada7; --line: #2a333a;
     --accent: #6fbf95; --accent-ink: #0c1a13; --accent-soft: #1b2b24;
     --warn-bg: #3a2f08; --warn-ink: #ffe08a;
+    --to-dark: none; --to-light: inline;
   }
 }
 :root[data-theme="dark"] {
   --bg: #11161a; --panel: #181f24; --ink: #e8ebe9; --muted: #a3ada7; --line: #2a333a;
   --accent: #6fbf95; --accent-ink: #0c1a13; --accent-soft: #1b2b24;
   --warn-bg: #3a2f08; --warn-ink: #ffe08a;
+    --to-dark: none; --to-light: inline;
 }
 
 * { box-sizing: border-box; }
@@ -44,9 +48,19 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 header.site { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-block: 8px 28px; }
 .brand { font: 600 22px/1 var(--serif); color: var(--ink); text-decoration: none; letter-spacing: .01em; }
 .brand small { font: 400 13px/1 var(--sans); color: var(--muted); margin-left: 8px; }
-nav.site { display: flex; gap: 16px; font-size: 15px; }
+nav.site { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 15px; }
 nav.site a { color: var(--muted); text-decoration: none; }
 nav.site a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.theme-toggle { font: 500 13px/1 var(--sans); color: var(--muted); background: var(--panel); border: 1px solid var(--line);
+  border-radius: 999px; padding: 6px 11px; cursor: pointer; white-space: nowrap; align-self: center; }
+.theme-toggle:hover { color: var(--ink); }
+.theme-toggle .to-dark { display: var(--to-dark); }
+.theme-toggle .to-light { display: var(--to-light); }
+@media (max-width: 600px) {
+  header.site { align-items: center; }
+  .theme-toggle { margin-left: auto; }
+  nav.site { flex-basis: 100%; order: 3; }
+}
 
 h1 { font: 600 clamp(28px, 6vw, 40px)/1.15 var(--serif); margin: 0 0 12px; text-wrap: balance; }
 h2 { font: 600 24px/1.25 var(--serif); margin: 40px 0 10px; text-wrap: balance; }
@@ -73,6 +87,22 @@ dl.facts dd { margin: 0; }
 .cmd { font: 500 15px/1 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 2px 7px; white-space: nowrap; }
 
 .cta { display: inline-block; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; padding: 12px 18px; border-radius: 10px; margin-top: 8px; }
+.caption { font-size: 15px; color: var(--muted); margin-top: 6px; }
+
+/* The demo, as a card: the three portraits (AI-generated, nobody real), one line, the button. */
+.demo-card { display: grid; gap: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin: 20px 0; }
+.demo-card .faces { display: flex; }
+.demo-card .faces img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--panel); background: var(--line); }
+.demo-card .faces img + img { margin-left: -12px; }
+.demo-card p { margin: 0; }
+.demo-card .cta { justify-self: start; margin-top: 2px; }
+
+/* "Try it": the WhatsApp button with the QR beside it. The QR hides on phones: a phone cannot scan its own screen. */
+.try { display: grid; grid-template-columns: 150px 1fr; gap: 20px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin: 16px 0 24px; }
+.try svg { width: 150px; height: 150px; background: #fff; border-radius: 10px; padding: 6px; }
+.try p { margin: 0 0 4px; }
+.try .pilot { font-size: 14px; color: var(--muted); margin-top: 10px; }
+@media (max-width: 600px) { .try { grid-template-columns: 1fr; } .try svg, .qr-only { display: none; } }
 
 .form-box { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin: 20px 0; }
 .form-box iframe { width: 100%; border: 0; min-height: 720px; }

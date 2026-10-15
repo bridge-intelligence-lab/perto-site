@@ -8,8 +8,8 @@
  "deep_link": "https://wa.me/message/OSQ5UAEWG2VTB1",
  "generated_on": "2026-10-03",
  "pilot_note": {
-  "lead": "Por enquanto, o Perto não consegue responder a números do Brasil (+55).",
-  "text": "Estamos resolvendo isso com a Meta."
+  "lead": "Por enquanto, números do Brasil (+55) ainda não recebem resposta.",
+  "text": "Se você tem um número do Canadá ou dos Estados Unidos, experimente: o Perto responde em português."
  },
  "personas": [
   {
