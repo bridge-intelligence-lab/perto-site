@@ -14,7 +14,7 @@ The editorial file picks the personas and carries the human-written blurbs:
   "qr_svg": "path to qr svg", "deep_link": "https://wa.me/...",
   "faces_dir": "optional dir with <stem>.jpg",
   "generated_on": "2026-10-03"  (optional: the footer's date; defaults to the run's),
-  "pilot_note": {"lead": "...", "text": "..."}  (optional extra line in the pilot box),
+  "pilot_note": {"lead": "...", "text": "..."}  (optional extra line in the pilot box; "lead" is bold and optional, "text" plain),
   "personas": [ {"key": "BRVN26:p078", "stem": "tiago", "display_name": "Tiago",
                  "role": "47 anos · cabeleireiro", "chips": ["..."],
                  "facts": [["Em casa", "..."], ...], "story": "...", "status": "...",
@@ -303,10 +303,10 @@ def build(replay: dict, ed: dict) -> str:
         f'<a href="{h}"{" aria-current=\"page\"" if h == S["demo_href"] else ""}>{esc(t)}</a>' for h, t in S["nav"]
     )
     pn = ed.get("pilot_note") or {}
-    pilot_note = (
-        f'<p class="pilot"><strong>{esc(pn["lead"])}</strong> {esc(pn.get("text", ""))}</p>\n    '
-        if pn.get("lead") else ""
+    pn_parts = ([f"<strong>{esc(pn['lead'])}</strong>"] if pn.get("lead") else []) + (
+        [esc(pn["text"])] if pn.get("text") else []
     )
+    pilot_note = f'<p class="pilot">{" ".join(pn_parts)}</p>\n    ' if pn_parts else ""
     how = "".join(f"<li>{esc(x)}</li>" for x in S["how"])
     try_top = try_block(S, cong, ed, qr, pilot_note, "demo-top", "top")
     try_bottom = try_block(S, cong, ed, qr, pilot_note, "demo-bottom")
