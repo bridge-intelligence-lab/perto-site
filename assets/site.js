@@ -1,4 +1,4 @@
-/* perto.life — the one script: theme toggle and WhatsApp click counts. No cookies, nothing personal. */
+/* perto.life — the one script: theme toggle, the remembered language choice and WhatsApp click counts. No cookies, nothing personal. */
 (function () {
   var KEY = 'perto-theme';
   var root = document.documentElement;
@@ -31,6 +31,13 @@
   document.addEventListener('click', function (e) {
     var btn = e.target.closest && e.target.closest('[data-theme-toggle]');
     if (btn) { toggleTheme(); return; }
+
+    /* A click on "English" / "Português" is an explicit choice: remember it so the front page stops guessing from the phone's language. */
+    var lang = e.target.closest && e.target.closest('a[lang]');
+    if (lang) {
+      try { localStorage.setItem('perto-lang', lang.getAttribute('lang') === 'en' ? 'en' : 'pt'); } catch (err) { /* blocked storage: the choice lasts this visit only */ }
+      return;
+    }
 
     /* Count a WhatsApp button click as an event, then let the navigation proceed. */
     var a = e.target.closest && e.target.closest('a[data-source]');

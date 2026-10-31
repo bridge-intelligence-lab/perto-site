@@ -6,6 +6,8 @@
 <title>Perto</title>
 <meta name="description" content="Perto is a pastoral companion on WhatsApp for churches: someone near at 11pm, with Scripture, and a pastor who knows what to pray for.">
 <link rel="alternate" hreflang="pt-BR" href="/">
+<script>/* Front page only: open the visitor's language. A remembered nav choice (perto-lang) wins; otherwise the phone's first language, pt → Portuguese, anything else → English. Never when coming from within the site, so the nav links are not undone. */
+(function(){try{var here='en',to='/',c=null;try{c=localStorage.getItem('perto-lang')}catch(e){}if(c==='pt'||c==='en'){if(c!==here)location.replace(to);return}if(document.referrer&&document.referrer.indexOf('//'+location.host+'/')!==-1)return;var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';if(!l)return;if((/^pt(-|$)/i.test(l)?'pt':'en')!==here)location.replace(to)}catch(e){}})();</script>
 <script>try{var t=localStorage.getItem('perto-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script data-goatcounter="https://perto.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&display=swap">
